@@ -1,1 +1,128 @@
-/* pages/circle/index.wxss */
+.circle-header-top{
+  width: 100%;
+  height: 88rpx;
+  background: #fff;
+  color: #F46954;
+  display: flex;
+  box-sizing: border-box;
+  justify-content: space-between;
+  padding: 0 26rpx;
+  border-bottom:1px solid #dddddd;
+  line-height:88rpx;
+  box-shadow: 0px 2px 5px 0px rgba(174, 174, 174, 0.5);
+}
+.circle-btn-report{
+  display: table-cell;
+  vertical-align: middle;
+  border: 1px solid #F46954 !important;
+  border-radius: 15px;
+  color: #F46954 !important;
+}
+.circle-btn-search{
+  display: table-cell;
+  vertical-align: middle;
+  border: 1px solid #F46954 !important;
+  color: #F46954 !important;
+}
+.icon-view{
+  margin-left:5px;
+}
+.btn-view{
+  display: table;
+}
+.circle-search-wrap{
+  display: table;
+}
+.circle-input-view{
+  display: table-cell;
+  vertical-align: middle;
+  height: 50rpx;
+  width: 300rpx;
+  font-size:30rpx;
+}
+.circle-input-left{
+  border: 1px solid #F46954;
+  border-radius: 15rpx;
+
+  vertical-align: middle;
+  height: 50rpx;
+  width: 300rpx;
+  font-size:30rpx;
+}
+.circle-input-left{
+  border: 1px solid #F46954;
+  border-radius: 15rpx;
+}
+.circle-legend-wrap{
+  width: 100%;
+  overflow: hidden;
+  background: #fff;
+  padding: 0;
+  white-space: nowrap;
+}
+.scroll-view-legend{
+  height: 80rpx;
+}
+.list-legend-top{
+  width: 110rpx;
+  height: 42rpx;
+  font-size: 25rpx;
+  color: #464646;
+  text-align: center;
+  line-height: 42rpx;
+  margin-top: 19rpx;
+  display: inline-block;
+  margin-left: 16rpx;
+  background: #DEDEDE;
+  border-radius: 15rpx;
+}
+#selected{
+  background: #FDD4CE;
+  color: #DC3C24;
+}
+.circle-content-list{
+  width: 100%;
+  height: 413rpx;
+  padding: 16rpx;
+  box-sizing:border-box;
+  background: #dddddd;
+}
+.list-user-img{
+  width: 46rpx;
+  height: 46rpx;
+}
+.list-user-img image{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.content-list-name{
+  height: 46rpx;
+  line-height: 46rpx;
+  padding: 14rpx 0;
+  font-size: 25rpx;
+  display: flex;
+}
+.list-user-name{
+  color: #BDBDBD;
+  margin-left: 11rpx;
+  box-sizing: border-box;
+  width: 90%;
+}
+.content-list-title{
+  width: 100%;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.content-list-main{
+  width: 100%;
+  height: 72rpx;
+  line-height: 40rpx;
+  color: #464646;
+  font-size: 25rpx;
+}
+.content-list-img{
+  
+}

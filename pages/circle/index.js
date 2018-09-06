@@ -5,14 +5,46 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    issearch:false,
+    query:{
+      title:"haha"
+    },
+    activeTab:"0",
+    arraylist:[
+      { name: "精选" },
+      { name: "精选" },
+      { name: "精选" },
+      { name: "精选" },
+      { name: "精选" },
+      { name: "精选" },
+      { name: "精选" },
+      { name: "精选" },
+      { name: "精选" },
+      { name: "精选" },
+      { name: "精选" },
+      { name: "精选" }
+    ]
   },
-
+  showSearch(){
+    this.setData({
+      issearch:true
+    })
+  },
+  cirSearch(){
+    console.log(this.data.query.title,"aaa")
+  },
+  sellegend(e){
+    this.setData({
+      activeTab: e.target.dataset.index
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.setNavigationBarTitle({
+      title: '圈子'
+    })
   },
 
   /**

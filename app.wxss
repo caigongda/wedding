@@ -17,14 +17,31 @@
 }
 @font-face {
   font-family: 'iconfont';  /* project id 822784 */
-  src: url('//at.alicdn.com/t/font_822784_i9xz8pn7nl.eot');
-  src: url('//at.alicdn.com/t/font_822784_i9xz8pn7nl.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_822784_i9xz8pn7nl.woff') format('woff'),
-  url('//at.alicdn.com/t/font_822784_i9xz8pn7nl.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_822784_i9xz8pn7nl.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_822784_oghd5927cu.eot');
+  src: url('//at.alicdn.com/t/font_822784_oghd5927cu.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_822784_oghd5927cu.woff') format('woff'),
+  url('//at.alicdn.com/t/font_822784_oghd5927cu.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_822784_oghd5927cu.svg#iconfont') format('svg');
 }
-.icon-iconquanzinor:before { content: "\e607"; }
 
-.icon-wode:before { content: "\e66c"; }
-
-.icon-shouye:before { content: "\e6e2"; }
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-sousuo:before { content: "\e60b"; }
+.over-flow-text{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.over-two-row{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display:-webkit-box; 
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2; 
+}
+::-webkit-scrollbar { width: 0; height: 0; color: transparent; }

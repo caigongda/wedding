@@ -1,2 +1,49 @@
-<!--pages/circle/index.wxml-->
-<text>pages/circle/index.wxml</text>
+<view class='circle-header-top'>
+  <view class='circle-search-wrap' bindtap='showSearch' wx:if="{{!issearch}}">
+    <text class="iconfont icon-sousuo"></text>
+  </view>
+  <view class='circle-search-wrap' wx:if="{{issearch}}">
+    <view class="circle-input-view">
+      <input class='circle-input-left' 
+        value='{{query.title}}'
+        type="text"
+        confirm-type="确定">
+      </input>
+    </view>
+    <view class='icon-view' bindtap='cirSearch'><text class="iconfont icon-sousuo"></text></view>
+  </view>
+  <view class='btn-view'>
+    <button 
+      plain 
+      size="mini"
+      class='circle-btn-report'>
+      发布</button>
+  </view>
+</view>
+<view class='circle-legend-wrap'>
+  <scroll-view class="scroll-view-legend" scroll-x>
+  <block 
+    wx:for="{{arraylist}}" 
+    wx:for-index="index" 
+    wx:for-item="item">
+    <view 
+          id="{{activeTab == index ? 'selected' : ''}}" 
+          class='list-legend-top' 
+          data-index='{{index}}'
+          bindtap='sellegend' >
+          {{item.name}}
+    </view>
+  </block>
+  </scroll-view>
+</view>
+<view class='circle-content-list'>
+  <view class='content-list-name'>
+    <view class='list-user-img'>
+      <image src='http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg'></image>
+    </view>
+    <view class='list-user-name over-flow-text'>你好</view>
+  </view>
+  <view class='content-list-title over-flow-text'>[骑行集合]百人骑行环湖活动</view>
+  <view class='content-list-main over-two-row'>由哈罗单车提供的1000辆共享单车也早已由哈罗单车提供的1000辆共享单车也早已由哈罗单车提供的1000辆共享单车也早已由哈罗单车提供的1000辆共享单车也早已</view>
+  <view class='content-list-img'></view>
+</view>
