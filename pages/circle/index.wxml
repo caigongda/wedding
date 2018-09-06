@@ -31,7 +31,7 @@
           class='list-legend-top' 
           data-index='{{index}}'
           bindtap='sellegend' >
-          {{item.name}}
+          <text data-index='{{index}}' bindtap='sellegend'>{{item.name}}</text>
     </view>
   </block>
   </scroll-view>

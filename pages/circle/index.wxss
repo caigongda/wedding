@@ -68,13 +68,13 @@
   height: 42rpx;
   font-size: 25rpx;
   color: #464646;
-  text-align: center;
-  line-height: 42rpx;
   margin-top: 19rpx;
   display: inline-block;
   margin-left: 16rpx;
   background: #DEDEDE;
   border-radius: 15rpx;
+  text-align: center;
+  line-height: 42rpx;
 }
 #selected{
   background: #FDD4CE;
