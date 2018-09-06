@@ -1,0 +1,36 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/circle/index",
+    "pages/person/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#F46954",
+    "navigationBarTitleText": "婚姻平台",
+    "navigationBarTextStyle":"#fff"
+  },
+  "tabBar":{
+    "list":[
+      {
+        "pagePath":"pages/index/index",
+        "text":"首页",
+        "iconPath":"assets/icon/index.png",
+        "selectedIconPath":"assets/icon/indexseled.png"
+      },
+      {
+        "pagePath": "pages/circle/index",
+        "text": "圈子",
+        "iconPath": "assets/icon/circle.png",
+        "selectedIconPath": "assets/icon/circleseled.png"
+      },
+      {
+        "pagePath": "pages/person/index",
+        "text": "我的",
+        "iconPath": "assets/icon/person.png",
+        "selectedIconPath": "assets/icon/personseled.png"
+      }
+    ]
+  }
+}
