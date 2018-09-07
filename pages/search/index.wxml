@@ -1,41 +1,27 @@
-<view class='circle-header-top'>
-  <view class='circle-search-wrap' bindtap='showSearch' wx:if="{{!issearch}}">
-    <text class="iconfont icon-sousuo"></text>
-  </view>
-  <view class='circle-search-wrap' wx:if="{{issearch}}">
-    <view class="circle-input-view">
-      <input class='circle-input-left' 
-        value='{{query.title}}'
-        type="text"
-        confirm-type="确定">
-      </input>
+<view class="weui-search-bar">
+   <view class="weui-search-bar__form">
+    <view class="weui-search-bar__box">
+      <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+      <input type="text" 
+            class="weui-search-bar__input" 
+            placeholder="请输入查询内容" 
+            focus='true' 
+            type='text'
+            value="{{SearchData.value}}" 
+            bindinput='SearchInput' 
+            confirm-type="search"
+            bindconfirm="SearchConfirm" />
+      <view class="weui-icon-clear" wx:if="{{SearchData.value.length > 0}}" bindtap="SearchClear">
+        <icon type="clear" size="14"></icon>
+      </view>
     </view>
-    <view class='icon-view' bindtap='cirSearch'><text class="iconfont icon-sousuo"></text></view>
   </view>
-  <view class='btn-view'>
-    <button 
-      plain 
-      size="mini"
-      class='circle-btn-report'>
-      发布</button>
-  </view>
-</view>
-<view class='circle-legend-wrap'>
-  <scroll-view class="scroll-view-legend" scroll-x>
-  <block 
-    wx:for="{{arraylist}}" 
-    wx:for-index="index" 
-    wx:for-item="item">
-    <view 
-          id="{{activeTab == index ? 'selected' : ''}}" 
-          class='list-legend-top' 
-          data-index='{{index}}'
-          bindtap='sellegend' >
-          <text data-index='{{index}}' bindtap='sellegend'>{{item.name}}</text>
+    <view class="weui-search-bar__cancel-btn" bindtap="SearchConfirm">
+         <text wx:if="{{SearchData.value.length>0}}" data-key='search'>搜索</text>
+         <text wx:else data-key='back'>返回</text>
     </view>
-  </block>
-  </scroll-view>
 </view>
+
 <view class='circle-content-list'>
   <view class='content-list-name'>
     <view class='list-user-img'>

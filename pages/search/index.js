@@ -1,49 +1,45 @@
-// pages/circle/index.js
+// pages/search/index.js
+const app=getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    issearch:false,
-    query:{
-      title:"haha"
-    },
-    activeTab:"0",
-    arraylist:[
-      { name: "精选" },
-      { name: "精选" },
-      { name: "精选" },
-      { name: "精选" },
-      { name: "精选" },
-      { name: "精选" },
-      { name: "精选" },
-      { name: "精选" },
-      { name: "精选" },
-      { name: "精选" },
-      { name: "精选" },
-      { name: "精选" }
-    ]
+    SearchData:{
+      value:"大大"
+    }
   },
-  showSearch(){
-    wx.navigateTo({
-      url: '../search/index'
-    })
-  },
-  cirSearch(){
-    console.log(this.data.query.title,"aaa")
-  },
-  sellegend(e){
+  SearchClear(){
     this.setData({
-      activeTab: e.target.dataset.index
+      ['SearchData.value']:""
     })
+  },
+  SearchInput(e) {
+    var inputValue = e.detail.value;
+    this.setData({
+      ['SearchData.value']: inputValue
+    });
+  },
+  SearchConfirm(e){
+    console.log(e,e.target.dataset.key, app.api.search)
+    if (e.target.dataset.key == 'back') {
+      /*返回*/
+      wx.navigateBack(1);
+    }else{
+      app.http('post', app.api.search, { tel: '17771806167' }, (res) => {
+        console.log(res)
+      }, (err) => {
+        console.log('请求错误信息：  ' + err.errMsg);
+      });
+    }
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     wx.setNavigationBarTitle({
-      title: '圈子'
+      title: '搜索'
     })
   },
 

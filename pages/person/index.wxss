@@ -1,1 +1,42 @@
-/* pages/person/index.wxss */
+.person-header-top{
+  width: 100%;
+  height: 170rpx;
+  background: #F46954;
+  padding: 0 0 50rpx 23rpx;
+  display: flex;
+  align-items:flex-end;
+}
+.person-header-img{
+  width: 120rpx;
+  height: 120rpx;
+}
+.person-header-img image{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.person-header-info{
+  display: flex;
+  flex-direction:column;
+  margin-left: 11rpx;
+}
+.person-header-info text{
+  color: #fff;
+  font-size: 30rpx;
+}
+.content-list-wrap{
+
+}
+.content-list-row{
+  display: flex;
+  justify-content: space-between;
+  padding: 23rpx 43rpx;
+  color: #515151;
+  font-size: 45rpx;
+}
+.icon-mima{
+}
+.text-icon-left{
+  font-size: 35rpx;
+  margin-left:28rpx;
+}

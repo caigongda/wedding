@@ -1,4 +1,5 @@
 //app.js
+const config=require("./assets/js/config.js");
 App({
   onLaunch: function () {
     // 展示本地存储能力
@@ -35,5 +36,7 @@ App({
   },
   globalData: {
     userInfo: null
-  }
+  },
+  api: config.api,
+  http:config.http
 })

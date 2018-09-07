@@ -1,2 +1,51 @@
-<!--pages/person/index.wxml-->
-<text>pages/person/index.wxml</text>
+<view class='person-header-top'>
+  <view class='person-header-img'>
+    <image src="http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg"></image>
+  </view>
+  <view class='person-header-info'>
+    <text>草莓味的棒棒糖</text>
+    <text>180******10</text>
+  </view>
+</view>
+<view class='content-list-wrap'>
+  <view class='content-list-row' bindtap='editPass'>
+    <view class='list-row-left'>
+      <text class="iconfont icon-mima">
+        <text class='text-icon-left'>修改密码</text>
+      </text>
+    </view>
+    <view class='list-row-right'>
+      <text class="iconfont icon-xiangyou"></text>
+    </view>
+  </view>
+  <view class='content-list-row' bindtap='openPicture'>
+    <view class='list-row-left'>
+      <text class="iconfont icon-xiangce">
+        <text class='text-icon-left'>相册照片</text>
+      </text>
+    </view>
+    <view class='list-row-right'>
+      <text class="iconfont icon-xiangyou"></text>
+    </view>
+  </view>
+  <view class='content-list-row'>
+    <view class='list-row-left'>
+      <text class="iconfont icon-kefu">
+        <text class='text-icon-left'>在线客服</text>
+      </text>
+    </view>
+    <view class='list-row-right'>
+      <text class="iconfont icon-xiangyou"></text>
+    </view>
+  </view>
+  <view class='content-list-row'>
+    <view class='list-row-left'>
+      <text class="iconfont icon-xinxishuoming">
+        <text class='text-icon-left'>帮助说明</text>
+      </text>
+    </view>
+    <view class='list-row-right'>
+      <text class="iconfont icon-xiangyou"></text>
+    </view>
+  </view>
+</view>

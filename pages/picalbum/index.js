@@ -1,41 +1,20 @@
-// pages/circle/index.js
+// pages/picalbum/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    issearch:false,
-    query:{
-      title:"haha"
-    },
-    activeTab:"0",
-    arraylist:[
-      { name: "精选" },
-      { name: "精选" },
-      { name: "精选" },
-      { name: "精选" },
-      { name: "精选" },
-      { name: "精选" },
-      { name: "精选" },
-      { name: "精选" },
-      { name: "精选" },
-      { name: "精选" },
-      { name: "精选" },
-      { name: "精选" }
-    ]
+
   },
-  showSearch(){
-    wx.navigateTo({
-      url: '../search/index'
-    })
-  },
-  cirSearch(){
-    console.log(this.data.query.title,"aaa")
-  },
-  sellegend(e){
-    this.setData({
-      activeTab: e.target.dataset.index
+  previewImg: function (e) {
+    var index = e.currentTarget.dataset.src;
+    wx.previewImage({
+      current: index,     //当前图片地址
+      urls: [index],               //所有要预览的图片的地址集合 数组形式
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
     })
   },
   /**
@@ -43,7 +22,7 @@ Page({
    */
   onLoad: function (options) {
     wx.setNavigationBarTitle({
-      title: '圈子'
+      title: '相册名称',
     })
   },
 

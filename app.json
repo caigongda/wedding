@@ -3,6 +3,10 @@
     "pages/index/index",
     "pages/circle/index",
     "pages/person/index",
+    "pages/search/index",
+    "pages/editpass/index",
+    "pages/picture/index",
+    "pages/picalbum/index",
     "pages/logs/logs"
   ],
   "window":{

@@ -1,0 +1,39 @@
+<!--pages/A-centrality/A-mySetting/A-password/A-password.wxml-->
+<view class='container'>
+  <form>
+    <view class='top'>
+      <view class='one_list'>
+        <view class='change'>
+          <view class=''>旧密码：</view>
+          <view>
+            <input placeholder="请输入旧密码" type='password' maxlength='20' value='{{oldpass}}' data-index="0" bindinput="iptoldpass"></input>
+          </view>
+        </view>
+        <view class='x'>✖</view>
+      </view>
+      <view class='x_line'></view>
+      <view class='one_list'>
+        <view class='change'>
+          <view class=''>新密码：</view>
+          <view>
+            <input placeholder="请输入新密码" type='password' maxlength='20' value='{{password}}' data-index="1" bindinput="iptoldpass"></input>
+          </view>
+        </view>
+        <view class='x'>✖</view>
+      </view>
+      <view class='x_line'></view>
+      <view class='one_list'>
+        <view class='change'>
+          <view class=''>确认密码：</view>
+          <view>
+            <input placeholder="请再次输入新密码" type='password' maxlength='20' value='{{repass}}' data-index="2" bindinput="iptoldpass"></input>
+          </view>
+        </view>
+        <view class='x'>✖</view>
+      </view>
+    </view>
+    <view class='pass-tips' animation="{{animationData}}">{{tiptext}}</view>
+    <view class='btn' bindtap='savepass'>确定</view>
+
+  </form>
+</view>
