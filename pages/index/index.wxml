@@ -11,11 +11,11 @@
     </swiper-item>
   </block>
 </swiper>
-<view class='index-card-wrap'>
+<view class='index-card-wrap' bindtap='wedDetail'>
   <view class='index-card-img'>
     <image src='{{imgUrls[0]}}'></image>
   </view>
-  <view class='index-card-title'>大家爱看大家爱看大家爱看大家爱看大家爱看</view>
+  <view class='index-card-title'>婚庆</view>
 </view>
 <view class='index-card-wrap'>
 

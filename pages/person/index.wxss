@@ -3,6 +3,7 @@
   height: 170rpx;
   background: #F46954;
   padding: 0 0 50rpx 23rpx;
+  box-sizing: border-box;
   display: flex;
   align-items:flex-end;
 }
@@ -33,6 +34,7 @@
   padding: 23rpx 43rpx;
   color: #515151;
   font-size: 45rpx;
+  border-bottom: 1px solid #F0F0F2;
 }
 .icon-mima{
 }

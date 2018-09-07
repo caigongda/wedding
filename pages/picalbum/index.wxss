@@ -1,13 +1,13 @@
 .album-list-wrap{
   display: flex;
-  align-items: center;
+  justify-content: space-between;
   flex-wrap: wrap;
   padding:0 15rpx;
 }
 .album-list-img{
   width: 222rpx;
   height: 222rpx;
-  margin:10px 30rpx 0 0;
+  margin-top:10px;
 }
 .album-list-img:nth-child(3n){
   margin-right: 0;
