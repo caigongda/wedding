@@ -8,6 +8,10 @@
     "pages/picture/index",
     "pages/picalbum/index",
     "pages/weddetail/index",
+    "pages/helpnote/index",
+    "pages/cardinfo/index",
+    "pages/styletmpl/index",
+    "pages/cardshare/index",
     "pages/logs/logs"
   ],
   "window":{

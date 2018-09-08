@@ -2,24 +2,14 @@
   <view class='circle-search-wrap' bindtap='showSearch' wx:if="{{!issearch}}">
     <text class="iconfont icon-sousuo"></text>
   </view>
-  <view class='circle-search-wrap' wx:if="{{issearch}}">
-    <view class="circle-input-view">
-      <input class='circle-input-left' 
-        value='{{query.title}}'
-        type="text"
-        confirm-type="确定">
-      </input>
-    </view>
-    <view class='icon-view' bindtap='cirSearch'><text class="iconfont icon-sousuo"></text></view>
-  </view>
   <view class='btn-view'>
-    <button 
-      plain 
-      size="mini"
-      class='circle-btn-report'>
-      发布</button>
+    <view 
+      class='circle-btn-report' bindtap='report'>
+      <text>发布</text>
+    </view>
   </view>
 </view>
+
 <view class='circle-legend-wrap'>
   <scroll-view class="scroll-view-legend" scroll-x>
   <block 
@@ -36,6 +26,30 @@
   </block>
   </scroll-view>
 </view>
+
+<view class='circle-content-list' bindtap='circleDetail'>
+  <view class='content-list-name'>
+    <view class='list-user-img'>
+      <image src='http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg'></image>
+    </view>
+    <view class='list-user-name over-flow-text'>你好</view>
+  </view>
+  <view class='content-list-title over-flow-text'>[骑行集合]百人骑行环湖活动</view>
+  <view class='content-list-main over-two-row'>由哈罗单车提供的1000辆共享单车也早已由哈罗单车提供的1000辆共享单车也早已由哈罗单车提供的1000辆共享单车也早已由哈罗单车提供的1000辆共享单车也早已</view>
+  <view class='content-img-wrap'>
+    <view class='content-list-img'>
+      <image src="http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg"></image>
+    </view>
+    <view class='content-list-img'>
+      <image src="http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg"></image>
+    </view>
+    <view class='content-list-img'>
+      <image src="http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg"></image>
+    </view>
+  </view>
+</view>
+
+
 <view class='circle-content-list'>
   <view class='content-list-name'>
     <view class='list-user-img'>

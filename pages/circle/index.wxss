@@ -8,14 +8,17 @@
   justify-content: space-between;
   padding: 0 26rpx;
   border-bottom:1px solid #dddddd;
-  line-height:88rpx;
+  align-items: center;
   box-shadow: 0px 2px 5px 0px rgba(174, 174, 174, 0.5);
 }
 .circle-btn-report{
-  display: table-cell;
-  vertical-align: middle;
+  width: 124rpx;
+  height: 50rpx;
   border: 1px solid #F46954 !important;
-  border-radius: 15px;
+  border-radius: 30rpx;
+  text-align: center;
+  font-size: 30rpx;
+  line-height: 50rpx;
   color: #F46954 !important;
 }
 .circle-btn-search{
@@ -24,30 +27,7 @@
   border: 1px solid #F46954 !important;
   color: #F46954 !important;
 }
-.icon-view{
-  margin-left:5px;
-}
-.btn-view{
-  display: table;
-}
-.circle-search-wrap{
-  display: table;
-}
-.circle-input-view{
-  display: table-cell;
-  vertical-align: middle;
-  height: 50rpx;
-  width: 300rpx;
-  font-size:30rpx;
-}
-.circle-input-left{
-  border: 1px solid #F46954;
-  border-radius: 15rpx;
-  vertical-align: middle;
-  height: 50rpx;
-  width: 300rpx;
-  font-size:30rpx;
-}
+
 .circle-legend-wrap{
   width: 100%;
   overflow: hidden;

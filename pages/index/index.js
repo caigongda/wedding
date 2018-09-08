@@ -19,6 +19,16 @@ Page({
       url: '../weddetail/index',
     })
   },
+  birthDetail(){
+    wx.navigateTo({
+      url: '../cardinfo/index',
+    })
+  },
+  elecCard(){
+    wx.navigateTo({
+      url: '../styletmpl/index',
+    })
+  },
   onLoad: function () {
     
   },

@@ -1,0 +1,31 @@
+/* pages/styletmpl/index.wxss */
+.tmpl-header-wrap{
+  width: 100%;
+  white-space: nowrap;
+  border-bottom: 1px solid #d1d1d1;
+}
+.tmpl-list-top{
+  display: inline-block;
+  padding: 22rpx 16rpx 5rpx 16rpx;
+  color: #101010;
+  font-size: 30rpx;
+}
+#tmplactive{
+  border-bottom: 2px solid #F46954;
+}
+.tmpl-list-wrap{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 6rpx 6rpx;
+  flex-wrap: wrap;
+}
+.list-img-wrap{
+  width: 350rpx;
+  height: 560rpx;
+  margin-bottom: 6rpx;
+}
+.list-img-wrap image{
+  width: 100%;
+  height: 100%;
+}

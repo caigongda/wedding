@@ -17,12 +17,33 @@
   </view>
   <view class='index-card-title'>婚庆</view>
 </view>
-<view class='index-card-wrap'>
-
+<view class='index-card-wrap' bindtap='birthDetail'>
+  <view class='index-card-img'>
+    <image src='{{imgUrls[0]}}'></image>
+  </view>
+  <view class='index-card-title'>生日</view>
 </view>
 <view class='index-card-wrap'>
-
+  <view class='index-card-img'>
+    <image src='{{imgUrls[0]}}'></image>
+  </view>
+  <view class='index-card-title'>满月</view>
 </view>
 <view class='index-card-wrap'>
-
+  <view class='index-card-img'>
+    <image src='{{imgUrls[0]}}'></image>
+  </view>
+  <view class='index-card-title'>寿宴</view>
+</view>
+<view class='index-card-wrap'>
+  <view class='index-card-img'>
+    <image src='{{imgUrls[0]}}'></image>
+  </view>
+  <view class='index-card-title'>聚会</view>
+</view>
+<view class='index-card-wrap' bindtap='elecCard'>
+  <view class='index-card-img'>
+    <image src='{{imgUrls[0]}}'></image>
+  </view>
+  <view class='index-card-title'>电子贺卡</view>
 </view>

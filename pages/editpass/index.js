@@ -36,7 +36,8 @@ Page({
         repass: value
       }, function () {
         this.animation = animation;
-        if (that.data.repass != that.data.password) {
+        if (that.data.repass != that.data.password
+          && that.data.repass!='') {
           animation.scale(1).step();
           that.setData({
             tiptext: "两次输入密码不一致",
@@ -53,14 +54,30 @@ Page({
       break;
     }
   },
-  savepass(){
-    if (this.data.password == "" || this.data.repass == "" || this.data.oldpass == ""){
-      wx.showToast({
-        title: '不能为空哦！',
-        icon:"none",
-        duration: 500
+  clearPass(e){
+    var pass = e.target.dataset.pass;
+    if (pass=="oldpass"){
+      this.setData({
+        oldpass: ""
+      })
+    } else if (pass == "password"){
+      this.setData({
+        password: ""
       })
     }else{
+      this.setData({
+        repass: ""
+      })
+    }
+  },
+  savepass() {
+    if (this.data.password == "" || this.data.repass == "" || this.data.oldpass == "") {
+      wx.showToast({
+        title: '不能为空哦！',
+        icon: "none",
+        duration: 500
+      })
+    } else {
       wx.showLoading();
       setTimeout(function () {
         wx.hideLoading()

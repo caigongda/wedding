@@ -38,6 +38,18 @@ Page({
       activeTab: e.target.dataset.index
     })
   },
+  report(){
+    wx.showToast({
+      icon:"none",
+      title: '发布什么呀',
+    })
+  },
+  circleDetail(){
+    wx.showToast({
+      icon: "none",
+      title: '点不了啊，没有设计详情页面',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

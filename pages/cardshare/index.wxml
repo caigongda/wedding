@@ -1,0 +1,23 @@
+<swiper  class='card-share-wrap' vertical="true">
+  <swiper-item class='share-img-wrap'>
+    <image src='http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg'></image>
+  </swiper-item>
+  <swiper-item class='share-img-wrap'>
+    <image src='http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg'></image>
+  </swiper-item>
+  <swiper-item class='share-img-wrap'>
+    <image src='http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg'></image>
+  </swiper-item>
+</swiper>
+
+<view class='card-other-wrap'>
+  <cover-view class='card-share-map'>
+    <cover-view class='map-title'>welcome</cover-view>
+    <cover-view class='map-info'>你带的奶奶带你打大大大大大大大大大大大大大大大少时诵诗书所所所所所所所所所所所所所所所所所所所</cover-view>
+    <map class='share-map'></map>
+  </cover-view>
+  <view class='card-share-btn public-btn-wrap'>
+    <view class='public-btn'>宾客回复</view>
+    <view class='public-btn'>送祝福</view>
+  </view>
+</view>

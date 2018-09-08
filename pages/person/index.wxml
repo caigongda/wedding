@@ -8,7 +8,7 @@
   </view>
 </view>
 <view class='content-list-wrap'>
-  <view class='content-list-row' bindtap='editPass'>
+  <button class='content-list-row' bindtap='editPass'>
     <view class='list-row-left'>
       <text class="iconfont icon-mima">
         <text class='text-icon-left'>修改密码</text>
@@ -17,8 +17,8 @@
     <view class='list-row-right'>
       <text class="iconfont icon-xiangyou"></text>
     </view>
-  </view>
-  <view class='content-list-row' bindtap='openPicture'>
+  </button>
+  <button class='content-list-row' bindtap='openPicture'>
     <view class='list-row-left'>
       <text class="iconfont icon-xiangce">
         <text class='text-icon-left'>相册照片</text>
@@ -27,8 +27,8 @@
     <view class='list-row-right'>
       <text class="iconfont icon-xiangyou"></text>
     </view>
-  </view>
-  <view class='content-list-row'>
+  </button>
+  <button  class='content-list-row' open-type="contact">
     <view class='list-row-left'>
       <text class="iconfont icon-kefu">
         <text class='text-icon-left'>在线客服</text>
@@ -37,8 +37,8 @@
     <view class='list-row-right'>
       <text class="iconfont icon-xiangyou"></text>
     </view>
-  </view>
-  <view class='content-list-row'>
+  </button>
+  <button class='content-list-row' bindtap='helpNote'>
     <view class='list-row-left'>
       <text class="iconfont icon-xinxishuoming">
         <text class='text-icon-left'>帮助说明</text>
@@ -47,5 +47,5 @@
     <view class='list-row-right'>
       <text class="iconfont icon-xiangyou"></text>
     </view>
-  </view>
+  </button>
 </view>

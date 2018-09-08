@@ -1,0 +1,18 @@
+<scroll-view class='tmpl-header-wrap'  scroll-x>
+  <block wx:for="{{tmplarr}}" 
+         wx:key="index" 
+         wx:for-index="index" 
+         wx:for-item="item">
+    <view class='tmpl-list-top' 
+          id="{{activetab==index?'tmplactive':''}}" 
+          data-index="{{index}}"
+          bindtap='selTmpl'>
+    {{item}}
+    </view>
+  </block>
+</scroll-view>
+<view class='tmpl-list-wrap'>
+    <view class='list-img-wrap' bindtap='cardShare'><image src='http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg'></image></view>
+    <view class='list-img-wrap'><image src='http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg'></image></view>
+    <view class='list-img-wrap'><image src='http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg'></image></view>
+</view>

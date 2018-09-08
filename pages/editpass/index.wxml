@@ -9,7 +9,7 @@
             <input placeholder="请输入旧密码" type='password' maxlength='20' value='{{oldpass}}' data-index="0" bindinput="iptoldpass"></input>
           </view>
         </view>
-        <view class='x'>✖</view>
+        <view class='x' data-pass="oldpass" bindtap='clearPass'>✖</view>
       </view>
       <view class='x_line'></view>
       <view class='one_list'>
@@ -19,7 +19,7 @@
             <input placeholder="请输入新密码" type='password' maxlength='20' value='{{password}}' data-index="1" bindinput="iptoldpass"></input>
           </view>
         </view>
-        <view class='x'>✖</view>
+        <view class='x' data-pass="password" bindtap='clearPass'>✖</view>
       </view>
       <view class='x_line'></view>
       <view class='one_list'>
@@ -29,7 +29,7 @@
             <input placeholder="请再次输入新密码" type='password' maxlength='20' value='{{repass}}' data-index="2" bindinput="iptoldpass"></input>
           </view>
         </view>
-        <view class='x'>✖</view>
+        <view class='x' data-pass="repass" bindtap='clearPass'>✖</view>
       </view>
     </view>
     <view class='pass-tips' animation="{{animationData}}">{{tiptext}}</view>
