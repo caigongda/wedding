@@ -40,6 +40,7 @@
         "iconPath": "assets/icon/person.png",
         "selectedIconPath": "assets/icon/personseled.png"
       }
-    ]
+    ],
+    "selectedColor": "#F46954"
   }
 }
