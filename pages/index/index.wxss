@@ -13,7 +13,7 @@
   background: #fff;
   margin:25rpx 12rpx 0 13rpx;
   float: left;
-  box-shadow: 0 2rpx 11rpx 5rpx #D9D9D9;
+  box-shadow: 0 2rpx 11rpx 5rpx rgba(217, 217, 217, 0.5);
 }
 .index-card-img{
   width: 100%;

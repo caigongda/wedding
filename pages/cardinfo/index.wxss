@@ -4,6 +4,12 @@
    align-items: center;
   border-bottom: 1px solid #F6F6F6
 }
+.info-row-ipt{
+  width: 100%;
+}
+.info-wrap-row input{
+  width: 100%;
+}
 .manicon{
   margin-right: 20rpx;
   color: #3277E5;

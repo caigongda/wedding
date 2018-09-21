@@ -15,7 +15,7 @@ function appRequest(methods, url, data, callback, errFun) {
     dataType: 'json',
     data: data,
     success: function (res) {
-      callback(res.data);
+      callback(res);
     },
     fail: function (err) {
       errFun(err);

@@ -1,25 +1,25 @@
 <view class='card-info-wrap'>
   <view class='info-wrap-row'>
     <text class='iconfont icon-xingbienan manicon'></text>
-    <view><input placeholder='新郎姓名' value='{{manname}}' bindinput='iptMan'></input></view>
+    <view class='info-row-ipt'><input placeholder='新郎姓名' value='{{manname}}' bindinput='iptMan'></input></view>
   </view>
 </view>
 <view class='card-info-wrap'>
   <view class='info-wrap-row'>
     <text class='iconfont icon-xingbienv womanicon'></text>
-    <view><input placeholder='新娘姓名' value='{{womanname}}' bindinput='iptWoman'></input></view>
+    <view class='info-row-ipt'><input placeholder='新娘姓名' value='{{womanname}}' bindinput='iptWoman'></input></view>
   </view>
 </view>
 <view class='card-info-wrap'>
   <view class='info-wrap-row'>
     <text class='iconfont icon-time wedtime'></text>
-    <view><input placeholder='婚礼时间' value='{{wedtime}}' bindinput='iptTime'></input></view>
+    <view class='info-row-ipt'><input placeholder='婚礼时间' value='{{wedtime}}' bindinput='iptTime'></input></view>
   </view>
 </view>
 <view class='card-info-wrap'>
   <view class='info-wrap-row'>
     <text class='iconfont icon-dizhi wedplace'></text>
-    <view><input placeholder='婚礼地址' value='{{wedplace}}' bindinput='iptPlace'></input></view>
+    <view class='info-row-ipt'><input placeholder='婚礼地址' value='{{wedplace}}' bindinput='iptPlace'></input></view>
 </view>
 </view>
 <view class='btn-wrap'>

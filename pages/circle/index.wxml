@@ -15,7 +15,8 @@
   <block 
     wx:for="{{arraylist}}" 
     wx:for-index="index" 
-    wx:for-item="item">
+    wx:for-item="item"
+    wx:key="index">
     <view 
           id="{{activeTab == index ? 'selected' : ''}}" 
           class='list-legend-top' 
@@ -26,7 +27,7 @@
   </block>
   </scroll-view>
 </view>
-
+<view class='h81'></view>
 <view class='circle-content-list' bindtap='circleDetail'>
   <view class='content-list-name'>
     <view class='list-user-img'>

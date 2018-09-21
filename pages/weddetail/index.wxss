@@ -4,6 +4,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   display: -webkit-flex;
+  margin-top:88rpx;
 }
 .detail-h115{
   width: 100%;
@@ -41,4 +42,31 @@
   font-size: 28rpx;
   border-radius: 32rpx;
   background: #F46954;
+}
+.circle-float{
+  color: #ffffff;
+  position: fixed;
+  bottom: 200rpx;
+  right: 50rpx;
+  width: 100rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 58rpx;
+  background: #F46954;
+}
+.detail-wrap-header{
+  width: 100%;
+  position: fixed;
+  top: 0;
+  height: 88rpx;
+  line-height: 88rpx;
+  background: #fff;
+  color: #F46954;
+  padding:0 40rpx;
+  box-sizing: border-box;
+  font-size: 58rpx;
+  text-align: right;
+  border-bottom: 1rpx solid #d1d1d1;
 }
