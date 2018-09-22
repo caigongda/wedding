@@ -4,7 +4,6 @@
   flex-wrap: wrap;
   justify-content: space-between;
   display: -webkit-flex;
-  margin-top:88rpx;
 }
 .detail-h115{
   width: 100%;
@@ -46,7 +45,7 @@
 .circle-float{
   color: #ffffff;
   position: fixed;
-  bottom: 200rpx;
+  bottom: 300rpx;
   right: 50rpx;
   width: 100rpx;
   height: 100rpx;
