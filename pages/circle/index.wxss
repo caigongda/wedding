@@ -2,6 +2,7 @@
   width: 100%;
   height: 88rpx; 
   background: #fff;
+  z-index:1111;
   color: #F46954;
   display: flex;
   box-sizing: border-box;
@@ -39,6 +40,7 @@
   height: 81rpx;
   overflow: hidden;
   background: #fff;
+  z-index:1111;
   padding: 0;
   white-space: nowrap;
 }
@@ -93,14 +95,12 @@
 }
 .content-list-title{
   width: 100%;
-  height: 40rpx;
   line-height: 40rpx;
   font-size: 30rpx;
   font-weight: bold;
 }
 .content-list-main{
   width: 100%;
-  height: 72rpx;
   line-height: 40rpx;
   color: #464646;
   font-size: 25rpx;
@@ -122,4 +122,12 @@
 .content-list-img image{
   width: 100%;
   height: 100%;
+}
+.scroll-list{
+  height: calc(100% - 169rpx);
+}
+.fresh-content{
+  width: 100%;
+  text-align: center;
+  color: #d1d1d1;
 }

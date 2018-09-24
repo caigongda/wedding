@@ -23,7 +23,9 @@ Page({
       { name: "精选" },
       { name: "精选" },
       { name: "精选" }
-    ]
+    ],
+    isscrollup:false,
+    isscrolldown: false
   },
   showSearch(){
     wx.navigateTo({
@@ -39,16 +41,27 @@ Page({
     })
   },
   report(){
-    wx.showToast({
-      icon:"none",
-      title: '发布什么呀',
+    wx.navigateTo({
+      url: '../reportCircle/index',
     })
   },
   circleDetail(){
-    wx.showToast({
-      icon: "none",
-      title: '点不了啊，没有设计详情页面',
+    wx.navigateTo({
+      url: '../circleDetail/index',
     })
+  },
+  refresh(){
+    this.setData({
+      isscrollup:true,
+    });
+    setTimeout(_=>{
+      this.setData({
+        isscrollup: false,
+      });
+    },1000)
+  },
+  loadMore() {
+    console.log("aa")
   },
   /**
    * 生命周期函数--监听页面加载

@@ -1,41 +1,19 @@
-// pages/person/index.js
-var app = getApp();
+// pages/circleDetail/index.js
+var app=getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    userimg:"",
-    username:""
+    userimg: "",
+    username: "",
   },
-  editPass(){
-    wx.navigateTo({
-      url: '../editpass/index',
-    })
-  },
-  openPicture(){
-    wx.navigateTo({
-      url: '../picture/index',
-    })
-  },
-  helpNote(){
-    wx.navigateTo({
-      url: '../helpnote/index',
-    })
-  },
-  onlineCon(){
-        wx.makePhoneCall({
-          phoneNumber: '17771806167' 
-        })
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.setNavigationBarTitle({
-      title: '我的'
-    });
     this.setData({
       userimg: app.globalData.userInfo.avatarUrl,
       username: app.globalData.userInfo.nickName

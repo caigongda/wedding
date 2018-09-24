@@ -1,14 +1,14 @@
 <view class='person-header-top'>
   <view class='person-header-img'>
-    <image src="http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg"></image>
+    <image src="{{userimg}}"></image>
   </view>
   <view class='person-header-info'>
-    <text>草莓味的棒棒糖</text>
+    <text>{{username}}</text>
     <text>180******10</text>
   </view>
 </view>
 <view class='content-list-wrap'>
-  <button class='content-list-row' bindtap='editPass'>
+  <button class='content-list-row' bindtap='editPass' style='display:none;'>
     <view class='list-row-left'>
       <text class="iconfont icon-mima">
         <text class='text-icon-left'>修改密码</text>
@@ -28,7 +28,7 @@
       <text class="iconfont icon-xiangyou"></text>
     </view>
   </button>
-  <button  class='content-list-row' open-type="contact">
+  <button  class='content-list-row' bindtap='onlineCon'>
     <view class='list-row-left'>
       <text class="iconfont icon-kefu">
         <text class='text-icon-left'>在线客服</text>

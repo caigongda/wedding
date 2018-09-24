@@ -12,7 +12,9 @@
     "pages/cardinfo/index",
     "pages/styletmpl/index",
     "pages/cardshare/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/reportCircle/index",
+    "pages/circleDetail/index"
   ],
   "window":{
     "backgroundTextStyle":"light",

@@ -1,0 +1,38 @@
+.circle-detail-wrap{
+  padding: 30rpx 20rpx;
+}
+.detail-userinfo{
+  display: flex;
+  align-items: center;
+}
+.detail-userinfo-img{
+  width: 88rpx;
+  height: 88rpx;
+}
+.detail-userinfo-img image{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.detail-userinfo-name{
+  color: #6699CC;
+  font-size: 40rpx;
+  margin-left: 11rpx;
+  box-sizing: border-box;
+  width: 90%;
+}
+.detail-title{
+  width: 100%;
+  padding: 20rpx 0;
+  line-height: 60rpx;
+  font-size: 40rpx;
+  font-weight: 500;
+}
+.detail-content{
+   width: 100%;
+   padding: 10rpx 0;
+  line-height: 40rpx;
+  color: #464646;
+  font-size: 30rpx;
+  text-indent: 2em;
+}

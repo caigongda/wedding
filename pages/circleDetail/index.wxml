@@ -1,0 +1,10 @@
+<view class='circle-detail-wrap'>
+  <view class='detail-userinfo'>
+    <view class='detail-userinfo-img'>
+      <image src='{{userimg}}'></image>
+    </view>
+    <view class='detail-userinfo-name'>{{username}}</view>
+  </view>
+  <view class='detail-title'>[骑行集合]百人骑行环湖活动</view>
+  <view class='detail-content'>由哈罗单车提供的1000辆共享单车也早已由哈罗单车提供的1000辆共享单车也早已由哈罗单车提供的1000辆共享单车也早已由哈罗单车提供的1000辆共享单车也早已</view>
+</view>

@@ -1,0 +1,45 @@
+<view class="report-con-wrap">
+  <view class="page-section">
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <input class="weui-input" 
+                auto-focus placeholder="标题" 
+                value='{{title}}' 
+                data-kind="title"
+                bindinput="changeVal"/>
+      </view>
+    </view>
+  </view>
+
+  <view class="page-section">
+    <view class="textarea-wrp">
+      <textarea class="weui-textarea" 
+              placeholder="快来写点什么吧！"  
+              value='{{content}}'
+              data-kind="content"
+              bindinput="changeVal"/>
+    </view>
+  </view>
+
+  <view class="page-section-bottom">
+      <view class='page-bottom-left' bindtap='selReportImg'>
+        <text class='iconfont icon-xiangce'></text>
+      </view>
+      <view class='page-bottom-right' bindtap='report'>发表</view>
+  </view>
+
+  <view class='report-imglist'>
+    <block wx:for="{{imgList}}" wx:for-index="index" wx:key="index">
+     <view class='img-wrap'>
+      <text class='iconfont icon-delete imag-delete' 
+          bindtap='cancelImg' data-index="{{index}}"></text>
+      <image src='{{item}}'></image>
+     </view>
+    </block>
+    <view class='img-wrap addimg' 
+          wx:if="{{imgList.length>0}}"
+          bindtap='selReportImg'>
+          <text class='iconfont icon-add'></text>
+    </view>
+  </view>
+</view>

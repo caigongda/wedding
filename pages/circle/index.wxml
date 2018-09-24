@@ -27,7 +27,15 @@
   </block>
   </scroll-view>
 </view>
+
 <view class='h81'></view>
+
+<view class="fresh-content" wx:if="{{isscrollup}}">
+  <text class='iconfont icon-fresh'></text>
+</view>
+
+<scroll-view class="scroll-list" upper-threshold='-50' scroll-y="true" bindscrolltoupper="refresh" bindscrolltolower="loadMore">
+
 <view class='circle-content-list' bindtap='circleDetail'>
   <view class='content-list-name'>
     <view class='list-user-img'>
@@ -35,7 +43,7 @@
     </view>
     <view class='list-user-name over-flow-text'>你好</view>
   </view>
-  <view class='content-list-title over-flow-text'>[骑行集合]百人骑行环湖活动</view>
+  <view class='content-list-title over-two-row'>[骑行集合]百人骑行环湖活动</view>
   <view class='content-list-main over-two-row'>由哈罗单车提供的1000辆共享单车也早已由哈罗单车提供的1000辆共享单车也早已由哈罗单车提供的1000辆共享单车也早已由哈罗单车提供的1000辆共享单车也早已</view>
   <view class='content-img-wrap'>
     <view class='content-list-img'>
@@ -72,3 +80,25 @@
     </view>
   </view>
 </view>
+<view class='circle-content-list'>
+  <view class='content-list-name'>
+    <view class='list-user-img'>
+      <image src='http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg'></image>
+    </view>
+    <view class='list-user-name over-flow-text'>你好</view>
+  </view>
+  <view class='content-list-title over-flow-text'>[骑行集合]百人骑行环湖活动</view>
+  <view class='content-list-main over-two-row'>由哈罗单车提供的1000辆共享单车也早已由哈罗单车提供的1000辆共享单车也早已由哈罗单车提供的1000辆共享单车也早已由哈罗单车提供的1000辆共享单车也早已</view>
+  <view class='content-img-wrap'>
+    <view class='content-list-img'>
+      <image src="http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg"></image>
+    </view>
+    <view class='content-list-img'>
+      <image src="http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg"></image>
+    </view>
+    <view class='content-list-img'>
+      <image src="http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg"></image>
+    </view>
+  </view>
+</view>
+</scroll-view>
