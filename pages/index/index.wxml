@@ -7,43 +7,16 @@
   class='index-swiper-top'>
   <block wx:for="{{imgUrls}}" wx:key="index">
     <swiper-item>
-      <image src="{{item}}" class="index-slide-image"/>
+      <image src="{{'http://hy.xiaolongshu.com'+item.bannerimage}}" class="index-slide-image"/>
     </swiper-item>
   </block>
 </swiper>
-<view class='index-card-wrap' bindtap='wedDetail'>
-  <view class='index-card-img'>
-    <image src='{{imgUrls[0]}}'></image>
+
+<block wx:for="{{moduleList}}" wx:key="index">
+  <view class='index-card-wrap' data-id='{{item.id}}' data-name='{{item.id}}' bindtap='wedDetail'>
+    <view class='index-card-img' data-id='{{item.id}}' data-name='{{item.id}}'>
+      <image src='{{"http://hy.xiaolongshu.com"+item.image}}' data-id='{{item.id}}' data-name='{{item.name}}'></image>
+    </view>
+    <view class='index-card-title' data-id='{{item.id}}' data-name='{{item.name}}'>{{item.name}}</view>
   </view>
-  <view class='index-card-title'>婚庆</view>
-</view>
-<view class='index-card-wrap' bindtap='birthDetail'>
-  <view class='index-card-img'>
-    <image src='{{imgUrls[0]}}'></image>
-  </view>
-  <view class='index-card-title'>生日</view>
-</view>
-<view class='index-card-wrap'>
-  <view class='index-card-img'>
-    <image src='{{imgUrls[0]}}'></image>
-  </view>
-  <view class='index-card-title'>满月</view>
-</view>
-<view class='index-card-wrap'>
-  <view class='index-card-img'>
-    <image src='{{imgUrls[0]}}'></image>
-  </view>
-  <view class='index-card-title'>寿宴</view>
-</view>
-<view class='index-card-wrap'>
-  <view class='index-card-img'>
-    <image src='{{imgUrls[0]}}'></image>
-  </view>
-  <view class='index-card-title'>聚会</view>
-</view>
-<view class='index-card-wrap' bindtap='elecCard'>
-  <view class='index-card-img'>
-    <image src='{{imgUrls[0]}}'></image>
-  </view>
-  <view class='index-card-title'>电子贺卡</view>
-</view>
+</block>

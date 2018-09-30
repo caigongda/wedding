@@ -1,17 +1,22 @@
 // pages/styletmpl/index.js
+var app=getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    activetab:"0",
-    tmplarr: ["推荐", "清新", "推荐", "推荐", "推荐", "推荐", "推荐", "推荐", "推荐", "推荐", "推荐", "推荐"]
+    curtemid:"",
+    tmplarr: [],
+    tmplclassarr:[],
+    curclassid:"",
+    page:1,
+    limit:10
   },
   selTmpl(e){
-    var index=e.target.dataset.index;
+    var id=e.target.dataset.id;
     this.setData({
-      activetab:index
+      curtemid: id
     })
   },
   cardShare(){
@@ -22,17 +27,45 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
+  templClass(classid){
+    var self=this;
+    app.http("POST", "/api/template/templateClass", { class: classid}, function (res) {//圈子分类
+      self.setData({
+        tmplclassarr: res.data.data,
+        curtemid: res.data.data[0].id
+      });
+      self.templList();
+    })
+  },
+  templList(){
+    var self = this;
+    var querydata={
+      class: +this.data.curtemid,
+      page:this.data.page,
+      limit:this.data.limit
+    };
+    app.http("POST", "/api/template/Template", querydata, function (res) {//圈子分类
+      self.setData({
+        tmplarr: res.data.data
+      });
+
+    })
+  },
   onLoad: function (options) {
     wx.setNavigationBarTitle({
       title: '风格模板',
-    })
+    });
+    this.setData({
+      curclassid: options.id
+    });
+    this.templClass(options.id);
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+    
   },
 
   /**

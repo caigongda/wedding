@@ -22,24 +22,26 @@
     </view>
 </view>
 
-<view class='circle-content-list'>
+<block 
+  wx:for="{{cicleConList}}" 
+  wx:for-index="index" 
+  wx:for-item="item"
+  wx:key="index">
+<view class='circle-content-list' data-item='{{item}}' bindtap='circleDetail'>
   <view class='content-list-name'>
     <view class='list-user-img'>
       <image src='http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg'></image>
     </view>
-    <view class='list-user-name over-flow-text'>你好</view>
+    <view class='list-user-name over-flow-text'>{{item.author}}</view>
   </view>
-  <view class='content-list-title over-flow-text'>[骑行集合]百人骑行环湖活动</view>
-  <view class='content-list-main over-two-row'>由哈罗单车提供的1000辆共享单车也早已由哈罗单车提供的1000辆共享单车也早已由哈罗单车提供的1000辆共享单车也早已由哈罗单车提供的1000辆共享单车也早已</view>
+  <view class='content-list-title over-two-row'>{{item.title}}</view>
+  <view class='content-list-main over-two-row'>{{item.article}}</view>
   <view class='content-img-wrap'>
-    <view class='content-list-img'>
-      <image src="http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg"></image>
+  <block wx:for="{{item.images}}" wx:key="index">
+    <view class='content-list-img' wx:if="{{index<3}}">
+      <image src="{{'http://hy.xiaolongshu.com'+item}}"></image>
     </view>
-    <view class='content-list-img'>
-      <image src="http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg"></image>
-    </view>
-    <view class='content-list-img'>
-      <image src="http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg"></image>
-    </view>
+  </block>
   </view>
 </view>
+</block>

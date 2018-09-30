@@ -1,4 +1,5 @@
 // pages/cardinfo/index.js
+var app=getApp();
 Page({
 
   /**
@@ -28,10 +29,17 @@ Page({
       wedtime: inputValue
     });
   },
-  iptPlace(e) {
-    var inputValue = e.detail.value;
-    this.setData({
-      wedplace: inputValue
+  selplace(){
+    var _this = this;
+    wx.chooseLocation({
+      success: function (res) {
+        _this.setData({
+          wedplace: res.address,
+        })
+      },
+      fail: function (err) {
+        console.log(err)
+      }
     });
   },
   create(){
@@ -44,7 +52,19 @@ Page({
           title: '不能为空哦！',
         })
     }else{
-
+      var querydata={
+        openid: app.globalData.personinfo.openid,
+        class:this.data.curclassid,
+        groom: this.data.manname,
+        bride: this.data.womanname,
+        time: this.data.wedtime,
+        address: this.data.wedplace
+      };
+      app.http('POST', "/api/wedding/createWedding1", querydata, (res) => {
+        console.log(res);
+      }, (err) => {
+        console.log('请求错误信息：  ' + err.errMsg);
+      });
     }
   },
   saveEdit(){

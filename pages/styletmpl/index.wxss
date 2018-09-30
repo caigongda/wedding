@@ -6,13 +6,13 @@
   position: fixed;
   top: 0;
   background: #fff;
+  border-bottom: 4rpx solid #d1d1d1;
 }
 .tmpl-list-top{
   display: inline-block;
-  padding: 24rpx 20rpx 14rpx 20rpx;
+  padding: 24rpx 20rpx 18rpx 20rpx;
   color: #101010;
   font-size: 30rpx;
-  border-bottom: 4rpx solid #d1d1d1;
 }
 #tmplactive{
   border-bottom: 4rpx solid #EB545A;

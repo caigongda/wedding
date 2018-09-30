@@ -7,7 +7,8 @@ Page({
   data: {
     title:"",
     content:"",
-    imgList:[]
+    imgList:[],
+    curid:"1"
   },
   selReportImg(){
     var _this = this;
@@ -16,15 +17,37 @@ Page({
       sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有  
       sourceType: ['camera','album'], // 可以指定来源是相册还是相机，默认二者都有  
       success: function (res) {
-        var imgList = _this.data.imgList;
+        console.log(res.tempFilePaths)
         var data = res.tempFilePaths;
-        imgList = imgList.concat(data);
-        // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片  
-        _this.setData({
-          imgList: imgList
-        })
+       
+        _this.uploadImg(res.tempFilePaths)
       }
     }) 
+  },
+  uploadImg(file){
+    var _this=this;
+    for(var i=0;i<file.length;i++){
+      wx.uploadFile({
+        url: 'http://hy.xiaolongshu.com/api/circle/upPicture', //仅为示例，非真实的接口地址
+        filePath: file[i],
+        name: 'imgs[]',
+        formData: {
+          'openid': app.globalData.personinfo.openid,
+        },
+        success(res) {
+          const data = res.data;
+          var result = JSON.parse(data);
+          console.log(result);
+          var imgList = _this.data.imgList;
+          imgList = imgList.concat(result.data);
+          // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片  
+          _this.setData({
+            imgList: imgList
+          });
+          //do something
+        }
+      })
+    }
   },
   cancelImg(e){
     console.log()
@@ -62,6 +85,29 @@ Page({
         icon: 'none',
         title: '内容不能为空哦！',
       })
+    }else{
+      var self = this;
+      var formdata={
+        openid: app.globalData.personinfo.openid,
+        circleclass_id: +self.data.curid,
+        title: self.data.title,
+        article: self.data.content,
+        images: self.data.imgList.join(",")
+      }
+      app.http("POST", "/api/circle/addArticle", formdata, function (res) {//圈子发布
+        if (res.data.code==1){
+          wx.showToast({
+            icon: 'success',
+            title: '添加成功',
+          })
+          let pages = getCurrentPages();  
+          let prevPage = pages[ pages.length - 2 ]; 
+          prevPage.setData({      
+            curcircleid: self.data.curid
+          });
+          wx.navigateBack(1)
+        }
+      })
     }
   },
   /**
@@ -70,7 +116,8 @@ Page({
   onLoad: function (options) {
     wx.setNavigationBarTitle({
       title: '圈子-发表',
-    })
+    });
+    this.data.curid = options.id;
   },
 
   /**

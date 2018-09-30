@@ -4,7 +4,7 @@
   </view>
   <view class='person-header-info'>
     <text>{{username}}</text>
-    <text>180******10</text>
+    <text>{{usertel}}</text>
   </view>
 </view>
 <view class='content-list-wrap'>

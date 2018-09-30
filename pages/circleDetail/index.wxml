@@ -3,8 +3,15 @@
     <view class='detail-userinfo-img'>
       <image src='{{userimg}}'></image>
     </view>
-    <view class='detail-userinfo-name'>{{username}}</view>
+    <view class='detail-userinfo-name'>{{detaildata.author}}</view>
   </view>
-  <view class='detail-title'>[骑行集合]百人骑行环湖活动</view>
-  <view class='detail-content'>由哈罗单车提供的1000辆共享单车也早已由哈罗单车提供的1000辆共享单车也早已由哈罗单车提供的1000辆共享单车也早已由哈罗单车提供的1000辆共享单车也早已</view>
+  <view class='detail-title'>{{detaildata.title}}</view>
+  <view class='detail-content'>{{detaildata.article}}</view>
+  <view class='content-img-wrap'>
+  <block wx:for="{{detaildata.images}}" wx:key="index">
+    <view class='content-list-img'>
+      <image src="{{'http://hy.xiaolongshu.com'+item}}"></image>
+    </view>
+  </block>
+  </view>
 </view>

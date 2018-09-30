@@ -7,8 +7,11 @@ Page({
    */
   data: {
     SearchData:{
-      value:"大大"
-    }
+      value:""
+    },
+    page:1,
+    limit:10,
+    cicleConList:[]
   },
   SearchClear(){
     this.setData({
@@ -21,14 +24,27 @@ Page({
       ['SearchData.value']: inputValue
     });
   },
+  circleDetail(e) {
+    var item = e.currentTarget.dataset.item;
+    wx.navigateTo({
+      url: '../circleDetail/index?item=' + JSON.stringify(item),
+    })
+  },
   SearchConfirm(e){
-    console.log(e,e.target.dataset.key, app.api.search)
     if (e.target.dataset.key == 'back') {
       /*返回*/
       wx.navigateBack(1);
     }else{
-      app.http('post', app.api.search, { tel: '17771806167' }, (res) => {
-        console.log(res)
+      var querydata={
+        sea: this.data.SearchData.value,
+        page:this.data.page,
+        limit: this.data.limit
+      };
+      app.http('get', "/api/circle/seaArticle",querydata, (res) => {
+        console.log(res);
+        this.setData({
+          cicleConList:res.data.data.search
+        })
       }, (err) => {
         console.log('请求错误信息：  ' + err.errMsg);
       });

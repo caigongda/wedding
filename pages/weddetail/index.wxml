@@ -1,7 +1,7 @@
 
-<view class='detail-list-wrap'>
+<view class='detail-list-wrap' wx:if="{{imgList.length!=0}}">
   <block wx:for="{{imgList}}" wx:for-index="index" wx:key="index">
-    <view class='list-img'><image src="{{item}}"></image></view>
+    <view class='list-img'><image src="{{item.image}}"></image></view>
   </block>
 </view>
 <view class='detail-h115'></view>

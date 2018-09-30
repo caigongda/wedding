@@ -9,14 +9,16 @@ Page({
       'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
       'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
     ],
+    moduleList:[],
     indicatorDots: true,
     autoplay: true,
     interval: 3000,
     duration: 1000
   },
-  wedDetail(){
+  wedDetail(e){
+    console.log(e)
     wx.navigateTo({
-      url: '../weddetail/index',
+      url: '../weddetail/index?id=' + e.target.dataset.id + "&name=" + e.target.dataset.name,
     })
   },
   birthDetail(){
@@ -29,7 +31,17 @@ Page({
       url: '../styletmpl/index',
     })
   },
-  onLoad: function () {
-    
+  onLoad: function (options) {
+    var self=this;
+    app.http("get", "/api/main/mainBanner", {}, function (res) {//轮播图
+      self.setData({
+        imgUrls: res.data.data,
+      })
+    })
+    app.http("get", "/api/main/mainClass", {}, function (res) {//首页分类
+      self.setData({
+        moduleList: res.data.data,
+      })
+    })
   },
 })

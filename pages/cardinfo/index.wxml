@@ -19,7 +19,7 @@
 <view class='card-info-wrap'>
   <view class='info-wrap-row'>
     <text class='iconfont icon-dizhi wedplace'></text>
-    <view class='info-row-ipt'><input placeholder='婚礼地址' value='{{wedplace}}' bindinput='iptPlace'></input></view>
+    <view class='info-row-ipt'><input placeholder='婚礼地址' value='{{wedplace}}' bindfocus="selplace"></input></view>
 </view>
 </view>
 <view class='btn-wrap'>

@@ -1,4 +1,5 @@
 // pages/circle/index.js
+var app=getApp();
 Page({
 
   /**
@@ -10,22 +11,13 @@ Page({
       title:"haha"
     },
     activeTab:"0",
-    arraylist:[
-      { name: "精选" },
-      { name: "精选" },
-      { name: "精选" },
-      { name: "精选" },
-      { name: "精选" },
-      { name: "精选" },
-      { name: "精选" },
-      { name: "精选" },
-      { name: "精选" },
-      { name: "精选" },
-      { name: "精选" },
-      { name: "精选" }
-    ],
+    arraylist:[],
+    cicleConList:[],
     isscrollup:false,
-    isscrolldown: false
+    isscrolldown: false,
+    curcircleid:null,
+    page:1,
+    limit:10
   },
   showSearch(){
     wx.navigateTo({
@@ -37,28 +29,27 @@ Page({
   },
   sellegend(e){
     this.setData({
-      activeTab: e.target.dataset.index
-    })
+      activeTab: e.target.dataset.index,
+      curcircleid: e.target.dataset.id
+    });
+    this.firstClick(e.target.dataset.id);
   },
   report(){
     wx.navigateTo({
-      url: '../reportCircle/index',
+      url: '../reportCircle/index?id=' + this.data.curcircleid,
     })
   },
-  circleDetail(){
+  circleDetail(e){
+    var item = e.currentTarget.dataset.item;
     wx.navigateTo({
-      url: '../circleDetail/index',
+      url: '../circleDetail/index?item=' + JSON.stringify(item),
     })
   },
   refresh(){
     this.setData({
       isscrollup:true,
     });
-    setTimeout(_=>{
-      this.setData({
-        isscrollup: false,
-      });
-    },1000)
+    this.firstClick(this.data.curcircleid);
   },
   loadMore() {
     console.log("aa")
@@ -66,10 +57,38 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
+  initPage(){
+    var self=this;
+    app.http("get", "/api/circle/circleClass", {}, function (res) {//圈子分类
+      var redata = res.data.data;
+      if (redata.length!=0){
+        self.setData({
+          arraylist: redata,
+          curcircleid: redata[0].id
+        });
+        self.firstClick(redata[0].id);
+      }
+    })
+  },
+  firstClick(id){
+    var self = this;
+    var queryparam = {
+      class: +id,
+      page: this.data.page,
+      limit: this.data.limit
+    };
+    app.http("POST", "/api/circle/circleArticle", queryparam, function (res) {//圈子分类
+      self.setData({
+        cicleConList: res.data.data.article,
+        isscrollup: false,
+      })
+    })
+  },
   onLoad: function (options) {
     wx.setNavigationBarTitle({
       title: '圈子'
-    })
+    });
+    this.initPage();
   },
 
   /**
@@ -83,7 +102,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.firstClick(this.data.curcircleid);
   },
 
   /**

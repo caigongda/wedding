@@ -7,7 +7,8 @@ Page({
    */
   data: {
     userimg:"",
-    username:""
+    username:"",
+    usertel:""
   },
   editPass(){
     wx.navigateTo({
@@ -37,8 +38,9 @@ Page({
       title: '我的'
     });
     this.setData({
-      userimg: app.globalData.userInfo.avatarUrl,
-      username: app.globalData.userInfo.nickName
+      userimg: app.globalData.personinfo.avatar,
+      username: app.globalData.personinfo.nickname,
+      usertel: app.globalData.personinfo.mobile
     })
   },
 

@@ -131,3 +131,6 @@
   width: 100%;
   height: 100%;
 }
+.scroll-list{
+  height: calc(100% - 169rpx);
+}

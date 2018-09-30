@@ -1,18 +1,24 @@
 <scroll-view class='tmpl-header-wrap'  scroll-x>
-  <block wx:for="{{tmplarr}}" 
+  <block wx:for="{{tmplclassarr}}" 
          wx:key="index" 
          wx:for-index="index" 
          wx:for-item="item">
     <view class='tmpl-list-top' 
-          id="{{activetab==index?'tmplactive':''}}" 
+          id="{{curtemid==item.id?'tmplactive':''}}" 
           data-index="{{index}}"
+          data-id='{{item.id}}'
           bindtap='selTmpl'>
-    {{item}}
+    {{item.name}}
     </view>
   </block>
 </scroll-view>
+
 <view class='tmpl-list-wrap'>
-    <view class='list-img-wrap' bindtap='cardShare'><image src='http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg'></image></view>
-    <view class='list-img-wrap'><image src='http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg'></image></view>
-    <view class='list-img-wrap'><image src='http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg'></image></view>
+    <block wx:for="{{tmplarr}}" 
+         wx:key="index" 
+         wx:for-index="index" 
+         wx:for-item="item">
+    <view class='list-img-wrap' data-temid="{{item.templateclass_id}}" bindtap='cardShare'>
+        <image data-temid="{{item.templateclass_id}}" src="{{'http://hy.xiaolongshu.com'+item.image}}"></image></view>
+    </block>
 </view>

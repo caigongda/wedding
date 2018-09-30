@@ -1,11 +1,15 @@
 // pages/weddetail/index.js
+var app=getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    imgList: ["http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg", "http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg", "http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg","http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg"]
+    indexclass:"",
+    imgList: [],
+    page:1,
+    limit:10
   },
   viewalbum(){
     var _this = this;
@@ -41,16 +45,34 @@ Page({
   },
   selStyleTmpl(){
     wx.navigateTo({
-      url: '../styletmpl/index',
+      url: '../styletmpl/index?id=' + this.data.indexclass,
     })
   },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    wx.setNavigationBarTitle({
-      title: '婚庆',
+  initpage(){//获取请帖列表
+    var self = this;
+    var querydata = {
+      openid: app.globalData.personinfo.openid,
+      class: this.data.indexclass,
+      page: this.data.page,
+      limit: this.data.limit,
+    };
+    app.http("POST", "/api/wedding/Wedding", querydata, function (res) {//圈子分类
+      self.setData({
+        imgList: res.data.data.wedding
+      })
     })
+  },
+  onLoad: function (options) {
+    this.setData({
+      indexclass: options.id
+    });
+    wx.setNavigationBarTitle({
+      title: options.name,
+    });
+    this.initpage();
   },
 
   /**

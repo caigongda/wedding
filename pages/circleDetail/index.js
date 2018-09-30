@@ -8,8 +8,15 @@ Page({
   data: {
     userimg: "",
     username: "",
+    detaildata:{},
   },
-
+  initPage(parms){
+    var item = JSON.parse(parms);
+    console.log(item)
+    this.setData({
+      detaildata: item
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -17,7 +24,9 @@ Page({
     this.setData({
       userimg: app.globalData.userInfo.avatarUrl,
       username: app.globalData.userInfo.nickName
-    })
+    });
+    this.initPage(options.item);
+    console.log(options)
   },
 
   /**

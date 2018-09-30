@@ -23,7 +23,8 @@ Page({
   onLoad: function (options) {
     wx.setNavigationBarTitle({
       title: '相册名称',
-    })
+    });
+    var id=options.id;
   },
 
   /**
