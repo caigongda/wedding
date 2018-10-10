@@ -12,20 +12,9 @@ Page({
     limit:10
   },
   viewalbum(){
-    var _this = this;
-    wx.chooseImage({
-      count: 1, // 默认9  
-      sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有  
-      sourceType: ['album'], // 可以指定来源是相册还是相机，默认二者都有  
-      success: function (res) {
-        var imgList=_this.data.imgList;
-        imgList.push(res.tempFilePaths)
-        // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片  
-        _this.setData({
-          imgList: imgList
-        })
-      }
-    }) 
+    wx.navigateTo({
+      url: '../picture/index?title=个人相册'+ "&wedid=-2&classid="+this.data.indexclass,
+    })
   },
   takephoto(){
     var _this = this;
@@ -37,11 +26,36 @@ Page({
         var imgList = _this.data.imgList;
         imgList.push(res.tempFilePaths)
         // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片  
-        _this.setData({
-          imgList: imgList
-        })
+        _this.uploadImg(res.tempFilePaths);
       }
     })  
+  },
+  uploadImg(file) {
+    var _this = this;
+    for (var i = 0; i < file.length; i++) {
+      wx.uploadFile({
+        url: 'http://hy.xiaolongshu.com/api/circle/upPicture',
+        filePath: file[i],
+        name: 'imgs[]',
+        formData: {
+          'openid': app.globalData.personinfo.openid,
+        },
+        success(res) {
+          const data = res.data;
+          var result = JSON.parse(data);
+          var imgList = _this.data.imgList;
+          imgList = imgList.concat(result.data);
+          // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片  
+          _this.setData({
+            imgList: imgList
+          });
+          wx.navigateTo({
+            url: '../picture/index?title=个人相册' + "&wedid=-1&classid=" + this.data.indexclass,
+          })
+          //do something
+        }
+      })
+    }
   },
   selStyleTmpl(){
     wx.navigateTo({

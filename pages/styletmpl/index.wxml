@@ -21,4 +21,6 @@
     <view class='list-img-wrap' data-temid="{{item.templateclass_id}}" bindtap='cardShare'>
         <image data-temid="{{item.templateclass_id}}" src="{{'http://hy.xiaolongshu.com'+item.image}}"></image></view>
     </block>
+    <view class='list-img-wrap' bindtap='cardShare'>
+        <image src="http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg"></image></view>
 </view>

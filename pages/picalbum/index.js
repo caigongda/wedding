@@ -1,11 +1,14 @@
 // pages/picalbum/index.js
+var app=getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    imgList:[],
+    page:1,
+    limit:10
   },
   previewImg: function (e) {
     var index = e.currentTarget.dataset.src;
@@ -17,6 +20,22 @@ Page({
       complete: function (res) { },
     })
   },
+  initAmbul(classid){
+    var querydata = {
+      openid: app.globalData.personinfo.openid,
+      class:classid,
+      page:this.data.page,
+      limit:this.data.limit
+    };
+    var self = this;
+    app.http("POST", "/api/media/Picture", querydata, function (res) {//圈子发布
+      if (res.data.code == 1) {
+        self.setData({
+          imgList: res.data.data.picture
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -25,6 +44,7 @@ Page({
       title: '相册名称',
     });
     var id=options.id;
+    this.initAmbul(id);
   },
 
   /**

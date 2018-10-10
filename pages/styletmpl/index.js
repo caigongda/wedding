@@ -29,7 +29,7 @@ Page({
    */
   templClass(classid){
     var self=this;
-    app.http("POST", "/api/template/templateClass", { class: classid}, function (res) {//圈子分类
+    app.http("POST", "/api/template/templateClass", { class: classid}, function (res) {
       self.setData({
         tmplclassarr: res.data.data,
         curtemid: res.data.data[0].id
@@ -44,7 +44,7 @@ Page({
       page:this.data.page,
       limit:this.data.limit
     };
-    app.http("POST", "/api/template/Template", querydata, function (res) {//圈子分类
+    app.http("POST", "/api/template/Template", querydata, function (res) {
       self.setData({
         tmplarr: res.data.data
       });

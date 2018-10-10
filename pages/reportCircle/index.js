@@ -13,13 +13,11 @@ Page({
   selReportImg(){
     var _this = this;
     wx.chooseImage({
-      count: 9, // 默认9  
+      count: 9, // 默认9
       sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有  
       sourceType: ['camera','album'], // 可以指定来源是相册还是相机，默认二者都有  
       success: function (res) {
-        console.log(res.tempFilePaths)
         var data = res.tempFilePaths;
-       
         _this.uploadImg(res.tempFilePaths)
       }
     }) 
@@ -28,7 +26,7 @@ Page({
     var _this=this;
     for(var i=0;i<file.length;i++){
       wx.uploadFile({
-        url: 'http://hy.xiaolongshu.com/api/circle/upPicture', //仅为示例，非真实的接口地址
+        url: 'http://hy.xiaolongshu.com/api/circle/upPicture', 
         filePath: file[i],
         name: 'imgs[]',
         formData: {

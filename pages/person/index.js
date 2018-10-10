@@ -15,9 +15,10 @@ Page({
       url: '../editpass/index',
     })
   },
-  openPicture(){
+  openPicture(e){
+    var dataset = e.currentTarget.dataset;
     wx.navigateTo({
-      url: '../picture/index',
+      url: '../picture/index?title=' + dataset.title + "&wedid=" + dataset.wedid,
     })
   },
   helpNote(){

@@ -29,10 +29,10 @@ Page({
   },
   sellegend(e){
     this.setData({
-      activeTab: e.target.dataset.index,
-      curcircleid: e.target.dataset.id
+      activeTab: e.currentTarget.dataset.index,
+      curcircleid: e.currentTarget.dataset.id
     });
-    this.firstClick(e.target.dataset.id);
+    this.firstClick(e.currentTarget.dataset.id);
   },
   report(){
     wx.navigateTo({

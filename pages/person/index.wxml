@@ -18,7 +18,7 @@
       <text class="iconfont icon-xiangyou"></text>
     </view>
   </button>
-  <button class='content-list-row' bindtap='openPicture'>
+  <button class='content-list-row' data-title='所有相册' data-wedid="0" bindtap='openPicture'>
     <view class='list-row-left'>
       <text class="iconfont icon-xiangce">
         <text class='text-icon-left'>相册照片</text>
