@@ -39,7 +39,7 @@ Page({
       title: '我的'
     });
     this.setData({
-      userimg: app.globalData.personinfo.avatar,
+      userimg: 'http://hy.jiefengtz.com'+app.globalData.personinfo.avatar,
       username: app.globalData.personinfo.nickname,
       usertel: app.globalData.personinfo.mobile
     })

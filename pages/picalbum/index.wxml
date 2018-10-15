@@ -1,7 +1,7 @@
 <view class='album-list-wrap'>
-  <block wx:for="{{imgList}}" wx:for-index="index" wx:key="index">
+  <block wx:if="{{imgList.length > 0}}" wx:for="{{imgList}}" wx:for-index="index" wx:key="index">
     <view class='album-list-img'>
-      <image src="{{'http://hy.xiaolongshu.com'+image}}" data-src="{{'http://hy.xiaolongshu.com'+image}}" bindtap='previewImg'></image>
+      <image src="{{'http://hy.jiefengtz.com'+item.image}}" data-src="{{'http://hy.jiefengtz.com'+item.image}}" bindtap='previewImg'></image>
     </view>
   </block>
 </view>

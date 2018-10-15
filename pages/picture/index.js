@@ -15,8 +15,9 @@ Page({
     limit:10
   },
   viewAlbum(e){
+    console.log(e);
     wx.navigateTo({
-      url: '../picalbum/index?id=' + e.target.dataset.ambulid,
+      url: '../picalbum/index?id=' + e.currentTarget.dataset.albumid + '&title=' + e.currentTarget.dataset.albumname,
     })
   },
   /**
@@ -24,7 +25,7 @@ Page({
    */
   getAlbum(){//获取个人所有相册接口
     var querydata={
-      openid: app.globalData.personinfo.openid
+      openid: app.globalData.personinfo.openid,
     };
     var self=this;
     app.http("POST", "/api/media/album", querydata, function (res) {//圈子发布
@@ -45,6 +46,7 @@ Page({
     };
     var self = this;
     app.http("POST", "/api/wedding/getAlbum", querydata, function (res) {//圈子发布
+      console.log(res.data.data,'12')
       if (res.data.code == 1) {
         self.setData({
           ambulList: res.data.data.album

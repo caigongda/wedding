@@ -26,7 +26,7 @@ Page({
     var _this=this;
     for(var i=0;i<file.length;i++){
       wx.uploadFile({
-        url: 'http://hy.xiaolongshu.com/api/circle/upPicture', 
+        url: 'http://hy.jiefengtz.com/api/circle/upPicture', 
         filePath: file[i],
         name: 'imgs[]',
         formData: {

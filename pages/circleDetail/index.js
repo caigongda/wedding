@@ -22,8 +22,8 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      userimg: app.globalData.userInfo.avatarUrl,
-      username: app.globalData.userInfo.nickName
+      //userimg: app.globalData.userInfo.avatar,
+      //username: app.globalData.userInfo.nickname
     });
     this.initPage(options.item);
     console.log(options)

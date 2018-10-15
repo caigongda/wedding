@@ -13,7 +13,7 @@ Page({
   },
   viewalbum(){
     wx.navigateTo({
-      url: '../picture/index?title=个人相册'+ "&wedid=-2&classid="+this.data.indexclass,
+      url: '../picture/index?title=个人相册'+ "&wedid=0&classid="+this.data.indexclass,
     })
   },
   takephoto(){
@@ -31,14 +31,17 @@ Page({
     })  
   },
   uploadImg(file) {
+    console.log(123)
     var _this = this;
     for (var i = 0; i < file.length; i++) {
       wx.uploadFile({
-        url: 'http://hy.xiaolongshu.com/api/circle/upPicture',
+        url: 'http://hy.jiefengtz.com/api/Wedding/upPicture',
         filePath: file[i],
         name: 'imgs[]',
         formData: {
           'openid': app.globalData.personinfo.openid,
+          'class' : this.data.indexclass,
+          'wedding_id' : -1
         },
         success(res) {
           const data = res.data;
@@ -50,7 +53,7 @@ Page({
             imgList: imgList
           });
           wx.navigateTo({
-            url: '../picture/index?title=个人相册' + "&wedid=-1&classid=" + this.data.indexclass,
+            url: '../picture/index?title=个人相册' + "&wedid=-1&classid=" + _this.data.indexclass,
           })
           //do something
         }
@@ -60,6 +63,11 @@ Page({
   selStyleTmpl(){
     wx.navigateTo({
       url: '../styletmpl/index?id=' + this.data.indexclass,
+    })
+  },
+  selCardInfo() {
+    wx.navigateTo({
+      url: '../cardinfo/index?id=' + this.data.indexclass,
     })
   },
   /**
@@ -73,13 +81,15 @@ Page({
       page: this.data.page,
       limit: this.data.limit,
     };
-    app.http("POST", "/api/wedding/Wedding", querydata, function (res) {//圈子分类
+    app.http("POST", "/api/wedding/Wedding", querydata, function (res) {//婚庆列表
+      //console.log(res,"12")
       self.setData({
         imgList: res.data.data.wedding
       })
     })
   },
   onLoad: function (options) {
+    console.log(options)
     this.setData({
       indexclass: options.id
     });

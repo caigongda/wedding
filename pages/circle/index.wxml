@@ -12,6 +12,13 @@
 
 <view class='circle-legend-wrap'>
   <scroll-view class="scroll-view-legend" scroll-x>
+  <view 
+      class='list-legend-top' 
+      id="{{curcircleid == 0 ? 'selected' : ''}}" 
+      data-index='0' 
+      data-id='0'>
+    <text data-index='0' data-id='0' bindtap='sellegend'>推荐</text>
+  </view>
   <block 
     wx:for="{{arraylist}}" 
     wx:for-index="index" 
@@ -45,16 +52,16 @@
 <view class='circle-content-list' data-item="{{item}}" bindtap='circleDetail'>
   <view class='content-list-name'>
     <view class='list-user-img'>
-      <image src='http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg'></image>
+      <image src="http://hy.jiefengtz.com{{item.avatar}}"></image>
     </view>
-    <view class='list-user-name over-flow-text'>{{item.author}}</view>
+    <view class='list-user-name over-flow-text'>{{item.nickname}}</view>
   </view>
   <view class='content-list-title over-two-row'>{{item.title}}</view>
   <view class='content-list-main over-two-row'>{{item.article}}</view>
   <view class='content-img-wrap'>
   <block wx:for="{{item.images}}" wx:key="index">
     <view class='content-list-img' wx:if="{{index<3}}">
-      <image src="{{'http://hy.xiaolongshu.com'+item}}"></image>
+      <image src="{{'http://hy.jiefengtz.com'+item}}"></image>
     </view>
   </block>
   </view>

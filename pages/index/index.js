@@ -34,6 +34,7 @@ Page({
   onLoad: function (options) {
     var self=this;
     app.http("get", "/api/main/mainBanner", {}, function (res) {//轮播图
+      //console.log(res.data)
       self.setData({
         imgUrls: res.data.data,
       })

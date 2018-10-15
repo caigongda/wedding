@@ -9,7 +9,9 @@ Page({
     manname:"",
     womanname:"",
     wedtime:"",
-    wedplace:""
+    wedplace:"",
+    classid:"",
+    wedding_id:""
   },
   iptMan(e){
     var inputValue = e.detail.value;
@@ -29,7 +31,7 @@ Page({
       wedtime: inputValue
     });
   },
-  selplace(){
+  selplace(e){
     var _this = this;
     wx.chooseLocation({
       success: function (res) {
@@ -54,7 +56,7 @@ Page({
     }else{
       var querydata={
         openid: app.globalData.personinfo.openid,
-        class:this.data.curclassid,
+        class:this.data.classid,
         groom: this.data.manname,
         bride: this.data.womanname,
         time: this.data.wedtime,
@@ -62,6 +64,13 @@ Page({
       };
       app.http('POST', "/api/wedding/createWedding1", querydata, (res) => {
         console.log(res);
+        //传递首页id和请帖id到 选择模板界面
+        this.setData({
+          wedding_id: res.data.data.id
+        })
+        wx.navigateTo({
+          url: '../styletmpl/index?curclassid=' + this.data.classid + '&wedding_id=' + this.data.wedding_id,
+        })
       }, (err) => {
         console.log('请求错误信息：  ' + err.errMsg);
       });
@@ -77,6 +86,10 @@ Page({
     wx.setNavigationBarTitle({
       title: '请帖信息',
     })
+    this.setData({
+      classid: options.id
+    })
+
   },
 
   /**

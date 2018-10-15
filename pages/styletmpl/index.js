@@ -10,6 +10,7 @@ Page({
     tmplarr: [],
     tmplclassarr:[],
     curclassid:"",
+    wedding_id:"",
     page:1,
     limit:10
   },
@@ -18,10 +19,20 @@ Page({
     this.setData({
       curtemid: id
     })
+    this.templList()
   },
-  cardShare(){
+  cardShare(e){
+    //console.log(e)
+    let that = this
     wx.navigateTo({
-      url: '../cardshare/index',
+      url: '../cardshare/index?url='+e.currentTarget.dataset.url+'&tmpid='+e.currentTarget.dataset.thid+'&wedid='+this.data.wedding_id,
+    })
+  },
+  cardEdit(e) {
+    console.log(e)
+    return
+    wx.navigateTo({
+      url: 'http://hy.jiefengtz.com',
     })
   },
   /**
@@ -30,9 +41,10 @@ Page({
   templClass(classid){
     var self=this;
     app.http("POST", "/api/template/templateClass", { class: classid}, function (res) {
+      //console.log(res)
       self.setData({
         tmplclassarr: res.data.data,
-        curtemid: res.data.data[0].id
+        curtemid: 0
       });
       self.templList();
     })
@@ -40,13 +52,14 @@ Page({
   templList(){
     var self = this;
     var querydata={
-      class: +this.data.curtemid,
+      class: this.data.curtemid,
       page:this.data.page,
       limit:this.data.limit
     };
     app.http("POST", "/api/template/Template", querydata, function (res) {
+      //console.log(res)
       self.setData({
-        tmplarr: res.data.data
+        tmplarr: res.data.data.template
       });
 
     })
@@ -56,9 +69,10 @@ Page({
       title: '风格模板',
     });
     this.setData({
-      curclassid: options.id
+      curclassid: options.curclassid,
+      wedding_id: options.wedding_id
     });
-    this.templClass(options.id);
+    this.templClass(options.curclassid);
   },
 
   /**

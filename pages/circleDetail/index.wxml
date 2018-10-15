@@ -1,16 +1,16 @@
 <view class='circle-detail-wrap'>
   <view class='detail-userinfo'>
     <view class='detail-userinfo-img'>
-      <image src='{{userimg}}'></image>
+      <image src='http://hy.jiefengtz.com{{detaildata.avatar}}'></image>
     </view>
-    <view class='detail-userinfo-name'>{{detaildata.author}}</view>
+    <view class='detail-userinfo-name'>{{detaildata.nickname}}</view>
   </view>
   <view class='detail-title'>{{detaildata.title}}</view>
   <view class='detail-content'>{{detaildata.article}}</view>
   <view class='content-img-wrap'>
   <block wx:for="{{detaildata.images}}" wx:key="index">
     <view class='content-list-img'>
-      <image src="{{'http://hy.xiaolongshu.com'+item}}"></image>
+      <image src="{{'http://hy.jiefengtz.com'+item}}"></image>
     </view>
   </block>
   </view>

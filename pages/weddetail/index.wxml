@@ -1,7 +1,7 @@
 
 <view class='detail-list-wrap' wx:if="{{imgList.length!=0}}">
   <block wx:for="{{imgList}}" wx:for-index="index" wx:key="index">
-    <view class='list-img'><image src="http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg"></image></view>
+    <view class='list-img'><image src="http://hy.jiefengtz.com{{item.image}}"></image></view>
   </block>
 </view>
 <view class='detail-h115'></view>
@@ -9,4 +9,5 @@
   <view class='detail-btn album' bindtap='viewalbum'><text>相册</text></view>
   <view class='detail-btn photo' bindtap='takephoto'><text>照相</text></view>
 </view>
-<view class='circle-float' bindtap='selStyleTmpl'><text class=''>+</text></view>
+<!--<view class='circle-float' bindtap='selStyleTmpl'><text class=''>+</text></view> -->
+<view class='circle-float' bindtap='selCardInfo'><text class=''>+</text></view>

@@ -29,6 +29,7 @@ Page({
     };
     var self = this;
     app.http("POST", "/api/media/Picture", querydata, function (res) {//圈子发布
+      console.log(res.data.data.picture)
       if (res.data.code == 1) {
         self.setData({
           imgList: res.data.data.picture
@@ -40,8 +41,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var title = options.title
     wx.setNavigationBarTitle({
-      title: '相册名称',
+      title: title,
     });
     var id=options.id;
     this.initAmbul(id);

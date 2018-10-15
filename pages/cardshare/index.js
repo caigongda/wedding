@@ -1,19 +1,24 @@
 // pages/cardshare/index.js
+var app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    url : ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options)
     wx.setNavigationBarTitle({
       title: '电子请柬分享',
+    })
+    this.setData({
+      url: 'http://hy.jiefengtz.com'+options.url + '?tmpid=' + options.tmpid + '&wedid=' + options.wedid + '&openid=' + app.globalData.personinfo.openid
     })
   },
 

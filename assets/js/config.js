@@ -7,7 +7,7 @@
   */
 function appRequest(methods, url, data, callback, errFun) {
   wx.request({
-    url: "http://hy.xiaolongshu.com"+url,
+    url: "http://hy.jiefengtz.com/"+url,
     method: methods,
     header: {
       'content-type': methods == 'GET' ? 'application/json' : 'application/x-www-form-urlencoded'

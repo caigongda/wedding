@@ -1,4 +1,11 @@
 <scroll-view class='tmpl-header-wrap'  scroll-x>
+<view 
+      class='tmpl-list-top' 
+      id="{{curtemid == 0 ? 'tmplactive' : ''}}" 
+      data-index='0' 
+      data-id='0'>
+    <text data-index='0' data-id='0' bindtap='selTmpl'>推荐</text>
+  </view>
   <block wx:for="{{tmplclassarr}}" 
          wx:key="index" 
          wx:for-index="index" 
@@ -18,9 +25,7 @@
          wx:key="index" 
          wx:for-index="index" 
          wx:for-item="item">
-    <view class='list-img-wrap' data-temid="{{item.templateclass_id}}" bindtap='cardShare'>
-        <image data-temid="{{item.templateclass_id}}" src="{{'http://hy.xiaolongshu.com'+item.image}}"></image></view>
+    <view class='list-img-wrap' data-temid="{{item.templateclass_id}}" bindtap='cardShare' data-url="{{item.file}}" data-thid="{{item.id}}">
+        <image data-temid="{{item.templateclass_id}}" src="{{'http://hy.jiefengtz.com'+item.image}}"></image></view>
     </block>
-    <view class='list-img-wrap' bindtap='cardShare'>
-        <image src="http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg"></image></view>
 </view>

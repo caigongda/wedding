@@ -15,7 +15,7 @@ Page({
     cicleConList:[],
     isscrollup:false,
     isscrolldown: false,
-    curcircleid:null,
+    curcircleid:0,
     page:1,
     limit:10
   },
@@ -52,7 +52,7 @@ Page({
     this.firstClick(this.data.curcircleid);
   },
   loadMore() {
-    console.log("aa")
+    //console.log("aa")
   },
   /**
    * 生命周期函数--监听页面加载
@@ -63,10 +63,9 @@ Page({
       var redata = res.data.data;
       if (redata.length!=0){
         self.setData({
-          arraylist: redata,
-          curcircleid: redata[0].id
+          arraylist: redata
         });
-        self.firstClick(redata[0].id);
+        self.firstClick(0);
       }
     })
   },
@@ -77,7 +76,8 @@ Page({
       page: this.data.page,
       limit: this.data.limit
     };
-    app.http("POST", "/api/circle/circleArticle", queryparam, function (res) {//圈子分类
+    app.http("POST", "/api/circle/circleArticle", queryparam, function (res) {//圈子分类文章
+      //console.log(res.data.data.article,"aaa") 
       self.setData({
         cicleConList: res.data.data.article,
         isscrollup: false,

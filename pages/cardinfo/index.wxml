@@ -13,7 +13,7 @@
 <view class='card-info-wrap'>
   <view class='info-wrap-row'>
     <text class='iconfont icon-time wedtime'></text>
-    <view class='info-row-ipt'><input placeholder='婚礼时间' value='{{wedtime}}' bindinput='iptTime'></input></view>
+    <view class='info-row-ipt'><input placeholder='婚礼时间' placeholder='2013-01-04 12:00:00' value='{{wedtime}}' bindinput='iptTime'></input></view>
   </view>
 </view>
 <view class='card-info-wrap'>
