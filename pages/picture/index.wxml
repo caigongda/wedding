@@ -1,8 +1,8 @@
 <block wx:for="{{ambulList}}" wx:for-index="index" wx:key="index">
   <view class='picture-list-wrap' data-albumid='{{item.id}}' data-albumname='{{item.name}}' bindtap='viewAlbum'>
     <view class='list-wrap-left'>
-      <view class='wrap-left-img' wx:if="{{item.image == ''}}" style="background:url('http://hy.jiefengtz.com/uploads/20181011/e29ae76825f975604073cf2b272d57c3.png')no-repeat center center;background-size:cover;"></view>
-      <view class='wrap-left-img' wx:else style="background:url('http://hy.jiefengtz.com{{item.image}}')no-repeat center center;background-size:cover;">
+      <view class='wrap-left-img' wx:if="{{item.image == ''}}" style="background:url('{{domain}}/uploads/20181011/e29ae76825f975604073cf2b272d57c3.png')no-repeat center center;background-size:cover;"></view>
+      <view class='wrap-left-img' wx:else style="background:url('{{domain}}{{item.image}}')no-repeat center center;background-size:cover;">
       </view>
       <view class='wrap-right-text'>{{item.name}} {{item.count}}</view>
     </view>

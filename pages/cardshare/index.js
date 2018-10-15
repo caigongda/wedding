@@ -18,7 +18,7 @@ Page({
       title: '电子请柬分享',
     })
     this.setData({
-      url: 'http://hy.jiefengtz.com'+options.url + '?tmpid=' + options.tmpid + '&wedid=' + options.wedid + '&openid=' + app.globalData.personinfo.openid
+      url: 'https://hy.aroad.xyz' + options.url + '?tmpid=' + options.tmpid + '&wedid=' + options.wedid + '&openid=' + wx.getStorageSync('openid')
     })
   },
 

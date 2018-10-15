@@ -71,7 +71,7 @@ Page({
         })
     }else{
       var querydata={
-        openid: app.globalData.personinfo.openid,
+        openid: wx.getStorageSync('openid'),
         class:this.data.classid,
         groom: this.data.manname,
         bride: this.data.womanname,

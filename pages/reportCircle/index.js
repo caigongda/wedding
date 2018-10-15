@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    domain:app.domain,
     title:"",
     content:"",
     imgList:[],
@@ -26,11 +27,11 @@ Page({
     var _this=this;
     for(var i=0;i<file.length;i++){
       wx.uploadFile({
-        url: 'http://hy.jiefengtz.com/api/circle/upPicture', 
+        url: app.domain + '/api/circle/upPicture', 
         filePath: file[i],
         name: 'imgs[]',
         formData: {
-          'openid': app.globalData.personinfo.openid,
+          'openid': wx.getStorageSync('openid'),
         },
         success(res) {
           const data = res.data;
@@ -86,7 +87,7 @@ Page({
     }else{
       var self = this;
       var formdata={
-        openid: app.globalData.personinfo.openid,
+        openid: wx.getStorageSync('openid'),
         circleclass_id: +self.data.curid,
         title: self.data.title,
         article: self.data.content,

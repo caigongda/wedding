@@ -5,9 +5,10 @@
   * callback： 请求成功回调函数
   * errFun： 请求失败回调函数
   */
+const domain = "https://hy.aroad.xyz";
 function appRequest(methods, url, data, callback, errFun) {
   wx.request({
-    url: "http://hy.jiefengtz.com/"+url,
+    url: "https://hy.aroad.xyz/"+url,
     method: methods,
     header: {
       'content-type': methods == 'GET' ? 'application/json' : 'application/x-www-form-urlencoded'
@@ -18,14 +19,16 @@ function appRequest(methods, url, data, callback, errFun) {
       callback(res);
     },
     fail: function (err) {
-      errFun(err);
+      //errFun(err);
+      console.log(err)
     }
   })
 };
-const api={
+/* const api={
   search:"https://tcc.taobao.com/cc/json/mobile_tel_segment.htm",
-};
+}; */
 module.exports={
   http: appRequest,
-  api:api
+  domain : domain
+  //api:api
 }

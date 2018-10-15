@@ -38,10 +38,11 @@ Page({
     wx.setNavigationBarTitle({
       title: '我的'
     });
+    console.log(app.globalData.personinfo.userinfo)
     this.setData({
-      userimg: 'http://hy.jiefengtz.com'+app.globalData.personinfo.avatar,
-      username: app.globalData.personinfo.nickname,
-      usertel: app.globalData.personinfo.mobile
+      userimg: app.globalData.personinfo.userinfo.avatar,
+      username: app.globalData.personinfo.userinfo.nickname,
+      usertel: app.globalData.personinfo.userinfo.mobile
     })
   },
 

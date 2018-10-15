@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    domain:app.domain,
     indexclass:"",
     imgList: [],
     page:1,
@@ -35,11 +36,11 @@ Page({
     var _this = this;
     for (var i = 0; i < file.length; i++) {
       wx.uploadFile({
-        url: 'http://hy.jiefengtz.com/api/Wedding/upPicture',
+        url: app.domain + '/api/Wedding/upPicture',
         filePath: file[i],
         name: 'imgs[]',
         formData: {
-          'openid': app.globalData.personinfo.openid,
+          'openid': wx.getStorageSync('openid'),
           'class' : this.data.indexclass,
           'wedding_id' : -1
         },
@@ -76,7 +77,7 @@ Page({
   initpage(){//获取请帖列表
     var self = this;
     var querydata = {
-      openid: app.globalData.personinfo.openid,
+      openid: wx.getStorageSync('openid'),
       class: this.data.indexclass,
       page: this.data.page,
       limit: this.data.limit,

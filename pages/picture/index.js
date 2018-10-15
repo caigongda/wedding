@@ -6,11 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    ambulList:[
-      { src: "http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg", name: "婚礼照片", count:"35"},
-      { src: "http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg", name: "婚礼照片", count: "35" },
-      { src: "http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg", name: "婚礼照片", count: "35" }
-    ],
+    domain: app.domain,
+    ambulList:[],
     page:1,
     limit:10
   },
@@ -25,7 +22,7 @@ Page({
    */
   getAlbum(){//获取个人所有相册接口
     var querydata={
-      openid: app.globalData.personinfo.openid,
+      openid: wx.getStorageSync('openid'),
     };
     var self=this;
     app.http("POST", "/api/media/album", querydata, function (res) {//圈子发布
@@ -38,7 +35,7 @@ Page({
   },
   gettempAlbum(classid,wedid){
     var querydata = {
-      openid: app.globalData.personinfo.openid,
+      openid: wx.getStorageSync('openid'),
       class: classid,
       wedding_id: wedid,
       page:this.data.page,

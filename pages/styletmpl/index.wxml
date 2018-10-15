@@ -26,6 +26,6 @@
          wx:for-index="index" 
          wx:for-item="item">
     <view class='list-img-wrap' data-temid="{{item.templateclass_id}}" bindtap='cardShare' data-url="{{item.file}}" data-thid="{{item.id}}">
-        <image data-temid="{{item.templateclass_id}}" src="{{'http://hy.jiefengtz.com'+item.image}}"></image></view>
+        <image data-temid="{{item.templateclass_id}}" src="{{domain}}{{item.image}}"></image></view>
     </block>
 </view>

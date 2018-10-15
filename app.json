@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/authorize/index",
     "pages/index/index",
     "pages/circle/index",
     "pages/person/index",

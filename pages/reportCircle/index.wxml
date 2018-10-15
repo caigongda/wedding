@@ -33,7 +33,7 @@
      <view class='img-wrap'>
       <text class='iconfont icon-delete imag-delete' 
           bindtap='cancelImg' data-index="{{index}}"></text>
-      <image src="{{'http://hy.jiefengtz.com'+item}}"></image>
+      <image src="{{domain}}{{item}}"></image>
      </view>
     </block>
     <view class='img-wrap addimg' 

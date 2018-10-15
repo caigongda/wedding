@@ -52,7 +52,7 @@
 <view class='circle-content-list' data-item="{{item}}" bindtap='circleDetail'>
   <view class='content-list-name'>
     <view class='list-user-img'>
-      <image src="http://hy.jiefengtz.com{{item.avatar}}"></image>
+      <image src="{{domain}}{{item.avatar}}"></image>
     </view>
     <view class='list-user-name over-flow-text'>{{item.nickname}}</view>
   </view>
@@ -61,7 +61,7 @@
   <view class='content-img-wrap'>
   <block wx:for="{{item.images}}" wx:key="index">
     <view class='content-list-img' wx:if="{{index<3}}">
-      <image src="{{'http://hy.jiefengtz.com'+item}}"></image>
+      <image src="{{domain}}{{item}}"></image>
     </view>
   </block>
   </view>

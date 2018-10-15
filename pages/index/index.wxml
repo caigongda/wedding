@@ -7,7 +7,7 @@
   class='index-swiper-top'>
   <block wx:for="{{imgUrls}}" wx:key="index">
     <swiper-item>
-      <image src="{{'http://hy.jiefengtz.com'+item.bannerimage}}" class="index-slide-image"/>
+      <image src="{{domain}}{{item.bannerimage}}" class="index-slide-image"/>
     </swiper-item>
   </block>
 </swiper>
@@ -15,7 +15,7 @@
 <block wx:for="{{moduleList}}" wx:key="index">
   <view class='index-card-wrap' data-id='{{item.id}}' data-name='{{item.id}}' bindtap='wedDetail'>
     <view class='index-card-img' data-id='{{item.id}}' data-name='{{item.id}}'>
-      <image src='{{"http://hy.jiefengtz.com"+item.image}}' data-id='{{item.id}}' data-name='{{item.name}}'></image>
+      <image src='{{domain}}{{item.image}}' data-id='{{item.id}}' data-name='{{item.name}}'></image>
     </view>
     <view class='index-card-title' data-id='{{item.id}}' data-name='{{item.name}}'>{{item.name}}</view>
   </view>

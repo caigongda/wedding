@@ -1,7 +1,7 @@
 <view class='circle-detail-wrap'>
   <view class='detail-userinfo'>
     <view class='detail-userinfo-img'>
-      <image src='http://hy.jiefengtz.com{{detaildata.avatar}}'></image>
+      <image src='{{domain}}{{detaildata.avatar}}'></image>
     </view>
     <view class='detail-userinfo-name'>{{detaildata.nickname}}</view>
   </view>
@@ -10,7 +10,7 @@
   <view class='content-img-wrap'>
   <block wx:for="{{detaildata.images}}" wx:key="index">
     <view class='content-list-img'>
-      <image src="{{'http://hy.jiefengtz.com'+item}}"></image>
+      <image src="{{domain}}{{item}}"></image>
     </view>
   </block>
   </view>

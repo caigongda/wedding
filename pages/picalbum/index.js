@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    domain:app.domain,
     imgList:[],
     page:1,
     limit:10
@@ -22,7 +23,7 @@ Page({
   },
   initAmbul(classid){
     var querydata = {
-      openid: app.globalData.personinfo.openid,
+      openid: wx.getStorageSync('openid'),
       class:classid,
       page:this.data.page,
       limit:this.data.limit
