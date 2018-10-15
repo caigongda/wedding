@@ -1,4 +1,5 @@
 // pages/cardinfo/index.js
+var dateTimePicker = require('../../utils/dateTimePicker.js');
 var app=getApp();
 Page({
 
@@ -8,10 +9,13 @@ Page({
   data: {
     manname:"",
     womanname:"",
-    wedtime:"",
+    wedtime:null,
     wedplace:"",
     classid:"",
-    wedding_id:""
+    wedding_id:"",
+    dateTimeArray1: null,
+    startYear: 2000,
+    endYear: 2050
   },
   iptMan(e){
     var inputValue = e.detail.value;
@@ -27,8 +31,20 @@ Page({
   },
   iptTime(e) {
     var inputValue = e.detail.value;
+    console.log(inputValue);
     this.setData({
       wedtime: inputValue
+    });
+  },
+  changeDateTimeColumn1(e) {
+    var arr = this.data.wedtime, dateArr = this.data.dateTimeArray1;
+
+    arr[e.detail.column] = e.detail.value;
+    dateArr[2] = dateTimePicker.getMonthDay(dateArr[0][arr[0]], dateArr[1][arr[1]]);
+
+    this.setData({
+      dateTimeArray1: dateArr,
+      wedtime: arr
     });
   },
   selplace(e){
@@ -89,7 +105,11 @@ Page({
     this.setData({
       classid: options.id
     })
-
+    var obj1 = dateTimePicker.dateTimePicker(this.data.startYear, this.data.endYear);
+    this.setData({
+      dateTimeArray1: obj1.dateTimeArray,
+      wedtime: obj1.dateTime
+    });
   },
 
   /**

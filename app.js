@@ -144,6 +144,7 @@ App({
       success: res => {
        var self=this;
         config.http("post", "/api/user/login", { openid: "test004"}, function (res) {
+          console.log(res,"cgd");
           self.globalData.personinfo=res.data.data.userinfo;
         })
         // 发送 res.code 到后台换取 openId, sessionKey, unionId

@@ -13,13 +13,18 @@
 <view class='card-info-wrap'>
   <view class='info-wrap-row'>
     <text class='iconfont icon-time wedtime'></text>
-    <view class='info-row-ipt'><input placeholder='婚礼时间' placeholder='2013-01-04 12:00:00' value='{{wedtime}}' bindinput='iptTime'></input></view>
+    <view class='info-row-ipt'>
+      <picker mode="multiSelector" value="{{wedtime}}" bindchange="iptTime" bindcolumnchange="changeDateTimeColumn1" range="{{dateTimeArray1}}">
+        <input placeholder='婚礼时间' placeholder='2013-01-04 12:00:00' value='{{dateTimeArray1[0][wedtime[0]]}}-{{dateTimeArray1[1][wedtime[1]]}}-{{dateTimeArray1[2][wedtime[2]]}} {{dateTimeArray1[3][wedtime[3]]}}:{{dateTimeArray1[4][wedtime[4]]}}'></input>
+      </picker>
+    </view>
   </view>
 </view>
+
 <view class='card-info-wrap'>
   <view class='info-wrap-row'>
     <text class='iconfont icon-dizhi wedplace'></text>
-    <view class='info-row-ipt'><input placeholder='婚礼地址' value='{{wedplace}}' bindfocus="selplace"></input></view>
+    <view class='info-row-ipt'><input placeholder='婚礼地址' value='{{wedplace}}' bindtap="selplace"></input></view>
 </view>
 </view>
 <view class='btn-wrap'>

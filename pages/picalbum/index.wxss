@@ -1,6 +1,5 @@
 .album-list-wrap{
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
   padding:0 15rpx;
 }
@@ -8,6 +7,7 @@
   width: 222rpx;
   height: 222rpx;
   margin-top:10px;
+  margin-right:20rpx;
 }
 .album-list-img:nth-child(3n){
   margin-right: 0;
