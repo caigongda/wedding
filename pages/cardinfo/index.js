@@ -17,7 +17,7 @@ Page({
     startYear: 2000,
     endYear: 2050,
     tmpid:'',
-    url:wx.getStorageSync('tmpUrl')
+    url:''
   },
   iptMan(e){
     var inputValue = e.detail.value;
@@ -88,7 +88,7 @@ Page({
         })
         console.log(this.data.url)
         wx.navigateTo({
-          url: '../cardshare/index?url=' + this.data.url + '&tmpid=' + this.data.tmpid + '&preview= 0&wedid=' + res.data.data.id
+          url: '../cardshare/index?tmpurl=' + this.data.url + '&tmpid=' + this.data.tmpid + '&preview= 0&wedid=' + res.data.data.id
         })
       }, (err) => {
         console.log('请求错误信息：  ' + err.errMsg);
@@ -108,6 +108,7 @@ Page({
     this.setData({
       classid: options.id,
       tmpid: options.tmpid,
+      url:options.tmpurl
     })
     var obj1 = dateTimePicker.dateTimePicker(this.data.startYear, this.data.endYear);
     this.setData({
