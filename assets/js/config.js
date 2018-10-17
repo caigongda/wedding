@@ -5,10 +5,10 @@
   * callback： 请求成功回调函数
   * errFun： 请求失败回调函数
   */
-const domain = "https://hy.aroad.xyz";
+const domain = "http://hy.jiefengtz.com";
 function appRequest(methods, url, data, callback, errFun) {
   wx.request({
-    url: "https://hy.aroad.xyz/"+url,
+    url: "http://hy.jiefengtz.com/"+url,
     method: methods,
     header: {
       'content-type': methods == 'GET' ? 'application/json' : 'application/x-www-form-urlencoded'

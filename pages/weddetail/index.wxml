@@ -10,4 +10,4 @@
   <view class='detail-btn photo' bindtap='takephoto'><text>照相</text></view>
 </view>
 <!--<view class='circle-float' bindtap='selStyleTmpl'><text class=''>+</text></view> -->
-<view class='circle-float' bindtap='selCardInfo'><text class=''>+</text></view>
+<view class='circle-float' bindtap='selStyleTmpl'><text class=''>+</text></view>

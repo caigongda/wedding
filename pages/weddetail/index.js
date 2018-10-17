@@ -63,7 +63,7 @@ Page({
   },
   selStyleTmpl(){
     wx.navigateTo({
-      url: '../styletmpl/index?id=' + this.data.indexclass,
+      url: '../styletmpl/index?curclassid=' + this.data.indexclass,
     })
   },
   selCardInfo() {

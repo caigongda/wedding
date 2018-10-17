@@ -11,7 +11,7 @@ Page({
     tmplarr: [],
     tmplclassarr:[],
     curclassid:"",
-    wedding_id:"",
+    //wedding_id:"",
     page:1,
     limit:10
   },
@@ -24,16 +24,18 @@ Page({
   },
   cardShare(e){
     //console.log(e)
+    //wx.setStorageSync('tmpUrl', e.currentTarget.dataset.url)
     let that = this
     wx.navigateTo({
-      url: '../cardshare/index?url='+e.currentTarget.dataset.url+'&tmpid='+e.currentTarget.dataset.thid+'&wedid='+this.data.wedding_id,
+      //url: '../cardshare/index?url='+e.currentTarget.dataset.url+'&tmpid='+e.currentTarget.dataset.thid+'&wedid='+this.data.wedding_id,
+      url: '../cardshare/index?tmpurl=' + e.currentTarget.dataset.url + '&url=' + e.currentTarget.dataset.url + '&tmpid=' + e.currentTarget.dataset.thid + '&preview=1'
     })
   },
   cardEdit(e) {
     console.log(e)
     return
     wx.navigateTo({
-      url: 'http://hy.jiefengtz.com',
+      //url: 'http://hy.jiefengtz.com',
     })
   },
   /**
@@ -69,9 +71,10 @@ Page({
     wx.setNavigationBarTitle({
       title: '风格模板',
     });
+    //console.log(options)
     this.setData({
       curclassid: options.curclassid,
-      wedding_id: options.wedding_id
+      //wedding_id: options.wedding_id
     });
     this.templClass(options.curclassid);
   },

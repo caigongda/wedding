@@ -15,7 +15,9 @@ Page({
     wedding_id:"",
     dateTimeArray1: null,
     startYear: 2000,
-    endYear: 2050
+    endYear: 2050,
+    tmpid:'',
+    url:wx.getStorageSync('tmpUrl')
   },
   iptMan(e){
     var inputValue = e.detail.value;
@@ -80,12 +82,13 @@ Page({
       };
       app.http('POST', "/api/wedding/createWedding1", querydata, (res) => {
         console.log(res);
-        //传递首页id和请帖id到 选择模板界面
+        //传递首页id和请帖id到 修改模板界面
         this.setData({
           wedding_id: res.data.data.id
         })
+        console.log(this.data.url)
         wx.navigateTo({
-          url: '../styletmpl/index?curclassid=' + this.data.classid + '&wedding_id=' + this.data.wedding_id,
+          url: '../cardshare/index?url=' + this.data.url + '&tmpid=' + this.data.tmpid + '&preview= 0&wedid=' + res.data.data.id
         })
       }, (err) => {
         console.log('请求错误信息：  ' + err.errMsg);
@@ -103,7 +106,8 @@ Page({
       title: '请帖信息',
     })
     this.setData({
-      classid: options.id
+      classid: options.id,
+      tmpid: options.tmpid,
     })
     var obj1 = dateTimePicker.dateTimePicker(this.data.startYear, this.data.endYear);
     this.setData({

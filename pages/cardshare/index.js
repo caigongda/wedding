@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    domain : app.domain,
     url : ''
   },
 
@@ -17,8 +18,14 @@ Page({
     wx.setNavigationBarTitle({
       title: '电子请柬分享',
     })
+    let url = ''
+    if(options.preview == 1){
+      url = this.data.domain + options.tmpurl + '?preview=1&tmpid=' + options.tmpid
+    }else{
+      url = this.data.domain + options.tmpurl + '?tmpid=' + options.tmpid + '&wedid=' + options.wedid + '&openid=' + wx.getStorageSync('openid')
+    }
     this.setData({
-      url: 'https://hy.aroad.xyz' + options.url + '?tmpid=' + options.tmpid + '&wedid=' + options.wedid + '&openid=' + wx.getStorageSync('openid')
+      url: url
     })
   },
 
