@@ -17,7 +17,7 @@ Page({
     startYear: 2000,
     endYear: 2050,
     tmpid:'',
-    url:wx.getStorageSync('tmpUrl')
+    url:""
   },
   iptMan(e){
     var inputValue = e.detail.value;
@@ -85,10 +85,10 @@ Page({
         //传递首页id和请帖id到 修改模板界面
         this.setData({
           wedding_id: res.data.data.id
-        })
-        console.log(this.data.url)
+        });
+        
         wx.navigateTo({
-          url: '../cardshare/index?url=' + this.data.url + '&tmpid=' + this.data.tmpid + '&preview= 0&wedid=' + res.data.data.id
+          url: '../cardshare/index?tmpurl=' + this.data.url + '&tmpid=' + this.data.tmpid + '&preview= 0&wedid=' + res.data.data.id
         })
       }, (err) => {
         console.log('请求错误信息：  ' + err.errMsg);
@@ -102,12 +102,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options,"info");
     wx.setNavigationBarTitle({
       title: '请帖信息',
     })
     this.setData({
       classid: options.id,
       tmpid: options.tmpid,
+      url:options.tmpurl
     })
     var obj1 = dateTimePicker.dateTimePicker(this.data.startYear, this.data.endYear);
     this.setData({
