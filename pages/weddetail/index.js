@@ -7,10 +7,12 @@ Page({
    */
   data: {
     domain:app.domain,
+    openid: wx.getStorageSync('openid'),
     indexclass:"",
     imgList: [],
     page:1,
-    limit:10
+    limit:10,
+    tmpurl : '/template'
   },
   viewalbum(){
     wx.navigateTo({
@@ -87,10 +89,19 @@ Page({
       self.setData({
         imgList: res.data.data.wedding
       })
+      console.log(self.data.imgList)
+    })
+  },
+  cardShare(e){
+    console.log(e)
+    //return
+    //console.log(this.data.openid)
+    wx.navigateTo({
+      url: '../cardshare/index?openid=' + this.data.openid + '&tmpurl=' + this.data.tmpurl + '&tmpid=' + e.currentTarget.dataset.tmpid + '&preview= 0&wedid=' + e.currentTarget.dataset.thid
     })
   },
   onLoad: function (options) {
-    console.log(options)
+    //console.log(options)
     this.setData({
       indexclass: options.id
     });

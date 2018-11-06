@@ -17,7 +17,8 @@ Page({
     startYear: 2000,
     endYear: 2050,
     tmpid:'',
-    url:''
+    url:'',
+    openid:wx.getStorageSync('openid')
   },
   iptMan(e){
     var inputValue = e.detail.value;
@@ -75,6 +76,7 @@ Page({
       var querydata={
         openid: wx.getStorageSync('openid'),
         class:this.data.classid,
+        template_id : this.data.tmpid,
         groom: this.data.manname,
         bride: this.data.womanname,
         time: this.data.wedtime,
@@ -88,7 +90,7 @@ Page({
         })
         console.log(this.data.url)
         wx.navigateTo({
-          url: '../cardshare/index?tmpurl=' + this.data.url + '&tmpid=' + this.data.tmpid + '&preview= 0&wedid=' + res.data.data.id
+          url: '../cardshare/index?openid=' + this.data.openid + '&tmpurl=' + this.data.url + '&tmpid=' + this.data.tmpid + '&preview= 0&wedid=' + res.data.data.id
         })
       }, (err) => {
         console.log('请求错误信息：  ' + err.errMsg);
