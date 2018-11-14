@@ -25,9 +25,9 @@ Page({
     if(options.preview == 1){
       url = this.data.domain + options.tmpurl + '?preview=1&tmpid=' + options.tmpid
     } else if (options.preview == 0){
-      url = this.data.domain + options.tmpurl + '?tmpid=' + options.tmpid + '&wedid=' + options.wedid + '&openid=' + wx.getStorageSync('openid')
+      url = this.data.domain + options.tmpurl + '?tmpid=' + options.tmpid + '&wedid=' + options.wedid + '&openid=' +                wx.getStorageSync('openid')
       this.setData({
-        shareUrl: '/pages/cardshare/?_url=' + this.data.domain + options.tmpurl + '&wedid=' + options.wedid + '&share=1&preview=2'
+        shareUrl: '/pages/cardshare/index?_url=' + this.data.domain + options.tmpurl + '&wedid=' + options.wedid + '&share=1&preview=2'
       })
     }else{
       url = options._url + '/?wedid=' + options.wedid +  '&share=1'
@@ -46,9 +46,8 @@ Page({
     } else {
       console.log("来自右上角转发菜单")
     }
-    console.log(that.data.shareUrl)
     return {
-      title: "ceshi",
+      title: "电子请柬分享",
       path: that.data.shareUrl,
       success: function (res) {
         // 转发成功

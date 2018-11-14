@@ -34,7 +34,6 @@ Page({
     })  
   },
   uploadImg(file) {
-    console.log(123)
     var _this = this;
     for (var i = 0; i < file.length; i++) {
       wx.uploadFile({
