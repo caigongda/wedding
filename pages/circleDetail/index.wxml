@@ -1,13 +1,13 @@
 <view class='circle-detail-wrap'>
   <view class='detail-userinfo'>
     <view class='detail-userinfo-img'>
-      <image src='{{domain}}{{detaildata.avatar}}'></image>
+      <image src='{{detaildata.avatar}}'></image>
     </view>
     <view class='detail-userinfo-name'>{{detaildata.nickname}}</view>
   </view>
   <view class='detail-title'>{{detaildata.title}}</view>
   <view class='detail-content'>{{detaildata.article}}</view>
-  <view class='content-img-wrap'>
+  <view class='content-img-wrap' wx:if="{{detaildata.images[0]!=''}}">
   <block wx:for="{{detaildata.images}}" wx:key="index">
     <view class='content-list-img'>
       <image src="{{domain}}{{item}}"></image>

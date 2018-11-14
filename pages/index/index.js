@@ -30,6 +30,11 @@ Page({
   },
   onLoad: function (options) {
     var self=this;
+    wx.showToast({
+      title: '',
+      icon: 'loading',
+      duration: 2000
+    })
     app.http("get", "/api/main/mainBanner", {}, function (res) {//轮播图
       //console.log(res.data)
       self.setData({
@@ -39,7 +44,8 @@ Page({
     app.http("get", "/api/main/mainClass", {}, function (res) {//首页分类
       self.setData({
         moduleList: res.data.data,
-      })
+      });
+      wx.hideToast();
     })
   },
 })

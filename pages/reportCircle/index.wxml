@@ -21,6 +21,14 @@
     </view>
   </view>
 
+  <view class="class-section">
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{classarr}}" range-key="name">
+      <view class="picker">
+        选择分类：{{classarr[index].name}}
+      </view>
+    </picker>
+  </view>
+
   <view class="page-section-bottom">
       <view class='page-bottom-left' bindtap='selReportImg'>
         <text class='iconfont icon-xiangce'></text>

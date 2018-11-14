@@ -1,9 +1,16 @@
 
 <view class='detail-list-wrap' wx:if="{{imgList.length!=0}}">
   <block wx:for="{{imgList}}" wx:for-index="index" wx:key="index">
-    <view class='list-img'><image src="{{domain}}{{item.image}}"></image></view>
+    <view class='list-img' data-tmpid="{{item.template_id}}" bindtap='cardShare' data-thid="{{item.id}}
+     wx:if="{{item.template_id!=null}}">
+      <image src="{{domain}}{{item.image}}"></image>
+    </view>
   </block>
 </view>
+<view class='list-img nodata' wx:if="{{imgList.length==0}}">
+    <image src='../../assets/icon/noimg.png' mode="aspectFill"></image>
+</view>
+<view class='nodata-text' wx:if="{{imgList.length==0}}">暂无请帖</view>
 <view class='detail-h115'></view>
 <view class='detail-btn-wrap'>
   <view class='detail-btn album' bindtap='viewalbum'><text>相册</text></view>

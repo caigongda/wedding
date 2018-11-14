@@ -17,7 +17,8 @@ Page({
     startYear: 2000,
     endYear: 2050,
     tmpid:'',
-    url:""
+    url:'',
+    openid:wx.getStorageSync('openid')
   },
   iptMan(e){
     var inputValue = e.detail.value;
@@ -63,6 +64,7 @@ Page({
     });
   },
   create(){
+    var self=this;
     if (this.data.manname==""||
       this.data.womanname ==""||
       this.data.wedtime == "" ||
@@ -75,20 +77,22 @@ Page({
       var querydata={
         openid: wx.getStorageSync('openid'),
         class:this.data.classid,
+        template_id : this.data.tmpid,
         groom: this.data.manname,
         bride: this.data.womanname,
         time: this.data.wedtime,
         address: this.data.wedplace
       };
+      console.log(querydata);
       app.http('POST', "/api/wedding/createWedding1", querydata, (res) => {
         console.log(res);
         //传递首页id和请帖id到 修改模板界面
-        this.setData({
+        self.setData({
           wedding_id: res.data.data.id
         });
         
         wx.navigateTo({
-          url: '../cardshare/index?tmpurl=' + this.data.url + '&tmpid=' + this.data.tmpid + '&preview= 0&wedid=' + res.data.data.id
+          url: '../cardshare/index?openid=' + self.data.openid + '&tmpurl=' + self.data.url + '&tmpid=' + self.data.tmpid + '&preview= 0&wedid=' + res.data.data.id
         })
       }, (err) => {
         console.log('请求错误信息：  ' + err.errMsg);

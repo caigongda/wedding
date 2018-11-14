@@ -69,3 +69,22 @@
   text-align: right;
   border-bottom: 1rpx solid #d1d1d1;
 }
+.nodata{
+  width: 347rpx;
+  height: 332.5rpx;
+  margin-top: 29rpx;
+  padding: 20rpx;
+  margin:0 auto;
+  text-align: center;
+}
+.nodata image{
+  width:70%;
+  height: 100%;
+  margin-top:50%;
+  margin-left: 50%;
+  transform: translate(-50%,-50%);
+}
+.nodata-text{
+  width: 100%;
+  text-align: center;
+}

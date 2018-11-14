@@ -9,7 +9,28 @@ Page({
     title:"",
     content:"",
     imgList:[],
-    curid:"1"
+    curid:"1",
+    classarr: [],
+    index:0,
+  },
+  bindPickerChange: function (e) {
+    var classarr = this.data.classarr;
+    this.setData({
+      index: e.detail.value,
+      curid: classarr[e.detail.value].id
+    });
+    console.log(this.data.curid)
+  },
+  getClass() {//获取圈子分类
+    var self = this;
+    app.http("get", "/api/circle/circleClass", {}, function (res) {
+      var redata = res.data.data;
+      if (redata.length != 0) {
+        self.setData({
+          classarr: redata
+        });
+      }
+    })
   },
   selReportImg(){
     var _this = this;
@@ -101,7 +122,7 @@ Page({
           })
           let pages = getCurrentPages();  
           let prevPage = pages[ pages.length - 2 ]; 
-          prevPage.setData({      
+          prevPage.setData({     
             curcircleid: self.data.curid
           });
           wx.navigateBack(1)
@@ -116,7 +137,7 @@ Page({
     wx.setNavigationBarTitle({
       title: '圈子-发表',
     });
-    this.data.curid = options.id;
+    this.getClass();
   },
 
   /**

@@ -37,7 +37,7 @@ Page({
   },
   report(){
     wx.navigateTo({
-      url: '../reportCircle/index?id=' + this.data.curcircleid,
+      url: '../reportCircle/index',
     })
   },
   circleDetail(e){
@@ -71,6 +71,11 @@ Page({
     })
   },
   firstClick(id){
+    wx.showToast({
+      title: '',
+      icon: 'loading',
+      duration: 2000
+    })
     var self = this;
     var queryparam = {
       class: +id,
@@ -82,7 +87,8 @@ Page({
       self.setData({
         cicleConList: res.data.data.article,
         isscrollup: false,
-      })
+      });
+      wx.hideToast();
     })
   },
   onLoad: function (options) {

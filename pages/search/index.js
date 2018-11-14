@@ -43,9 +43,18 @@ Page({
       };
       app.http('get', "/api/circle/seaArticle",querydata, (res) => {
         console.log(res);
-        this.setData({
-          cicleConList:res.data.data.search
-        })
+        var searcharr = res.data.data.search;
+        if (searcharr.length!=0){
+          this.setData({
+            cicleConList: searcharr
+          })
+        }else{
+          wx.showToast({
+            title: '暂无相关内容',
+            icon: 'none',
+            duration: 2000
+          })
+        }
       }, (err) => {
         console.log('请求错误信息：  ' + err.errMsg);
       });

@@ -68,17 +68,12 @@ Page({
       //用户按了允许授权按钮
       var that = this;
       //插入登录的用户的相关信息到数据库
-      console.log(e)
       getApp().globalData.userInfo = e.detail.userInfo
       //从数据库获取用户信息
-      console.log(1)
       that.userLogin()
-      console.log(2)
-
-      //授权成功后，跳转进入小程序首页
-      /* wx.switchTab({
+      wx.switchTab({
         url: '../index/index'
-      }) */
+      }) 
     } else {
       //用户按了拒绝按钮
       wx.showModal({
@@ -99,13 +94,12 @@ Page({
     wx.request({
       url: app.globalData.urlPath + 'user/userInfo',
       data: {
-        openid: wx.setStorageSync('openid')
+        openid: wx.getStorageSync('openid')
       },
       header: {
         'content-type': 'application/json'
       },
       success: function (res) {
-        console.log(res.data);
         getApp().globalData.userInfo = res.data;
       }
     })
