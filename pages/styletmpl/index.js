@@ -54,7 +54,9 @@ Page({
   },
   templList(){
     var self = this;
+    //console.log(this.data)
     var querydata={
+      mainclass: this.data.curclassid,
       class: this.data.curtemid,
       page:this.data.page,
       limit:this.data.limit
